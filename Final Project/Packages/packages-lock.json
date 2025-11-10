@@ -72,11 +72,24 @@
       "source": "builtin",
       "dependencies": {}
     },
+<<<<<<< HEAD
     "com.unity.cinemachine": {
       "version": "2.6.17",
       "depth": 0,
       "source": "registry",
       "dependencies": {},
+=======
+    "com.unity.2d.tilemap.extras": {
+      "version": "1.8.4-preview",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0",
+        "com.unity.2d.tilemap": "1.0.0",
+        "com.unity.modules.tilemap": "1.0.0",
+        "com.unity.modules.jsonserialize": "1.0.0"
+      },
+>>>>>>> parent of 0349a08 (Made big changes)
       "url": "https://packages.unity.com"
     },
     "com.unity.collab-proxy": {
@@ -137,7 +150,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.textmeshpro": {
-      "version": "3.0.9",
+      "version": "3.0.6",
       "depth": 0,
       "source": "registry",
       "dependencies": {
