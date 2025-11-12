@@ -44,7 +44,7 @@ public class GardenManager : MonoBehaviour
 
     public void Transaction(int value)
     {
-        money += value;
+        money += value/2;
         moneyText.text = "$" + money;
     }
 }
