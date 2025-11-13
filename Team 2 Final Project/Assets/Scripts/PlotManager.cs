@@ -8,7 +8,7 @@ public class PlotManager : MonoBehaviour
     bool isPlanted = false;
     SpriteRenderer plant;
     int plantStage = 0;
-    float timer;
+    DayProgression days;
     BoxCollider2D plantCollider;
     public Color availableColor = Color.green;
     public Color unavailableColor = Color.red;
@@ -26,13 +26,14 @@ public class PlotManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+        
         if (isPlanted)
         {
-            if (timer <= 0 && plantStage < selectedPlant.plantStages.Length - 1)
+            if (DayProgression.Day <= 0 && plantStage < selectedPlant.plantStages.Length - 1)
             {
                 plantStage++;
                 UpdatePlant();
+                DayProgression.Day = selectedPlant.daysBetweenStages;
             }
         }
     }
@@ -82,7 +83,7 @@ public class PlotManager : MonoBehaviour
 
         plantStage = 0;
         UpdatePlant();
-        timer = selectedPlant.timeBetweenStages;
+        DayProgression.Day = selectedPlant.daysBetweenStages;
         plant.gameObject.SetActive(true);
     }
     void Harvest()

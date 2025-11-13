@@ -8,7 +8,7 @@ public class PlantObject : ScriptableObject
 
     public string plantName;
     public Sprite[] plantStages;
-    public float timeBetweenStages;
+    public int daysBetweenStages;
     public int buyPrice;
     public int sellPrice;
     public Sprite icon;
