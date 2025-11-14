@@ -1,3 +1,9 @@
+/* Adam Krenek
+ * FinalGameProject
+ * This manages the in-game store
+ * players can buy seeds and services
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

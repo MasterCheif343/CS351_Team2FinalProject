@@ -1,3 +1,8 @@
+/* Adam Krenek
+ * FinalGameProject
+ * This script lets us creat plant objects
+ * Allows for different plants to be easily implemented in the store and in the game
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

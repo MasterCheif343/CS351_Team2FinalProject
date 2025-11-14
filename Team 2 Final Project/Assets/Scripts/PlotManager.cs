@@ -1,3 +1,8 @@
+/* Adam Krenek
+ * FinalGameProject
+ * This script manages the plots of land the player is going to use
+ * They can grow plants and choose which plants to choose based on how much money they have
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +19,9 @@ public class PlotManager : MonoBehaviour
     public Color unavailableColor = Color.red;
     public PlantObject selectedPlant;
     SpriteRenderer plot;
+    bool isDry = true;
+    public Sprite dryPlot;
+    public Sprite normalPlot;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +29,14 @@ public class PlotManager : MonoBehaviour
         plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
         gm = transform.parent.GetComponent<GardenManager>();
         plot = GetComponent<SpriteRenderer>();
+        plot.sprite = dryPlot;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (isPlanted)
+        if (isPlanted && !isDry)
         {
             if (DayProgression.Day <= 0 && plantStage < selectedPlant.plantStages.Length - 1)
             {
@@ -50,6 +59,18 @@ public class PlotManager : MonoBehaviour
         else if(gm.isPlanting && gm.selectPlant.plant.buyPrice <= gm.money)
         {
             Plant(gm.selectPlant.plant);
+        }
+        if (gm.isSelecting)
+        {
+            switch (gm.selectedTool)
+            {
+                case 1:
+                    isDry = false;
+                    plot.sprite = normalPlot;
+                    break;
+                default:
+                    break;
+            }
         }
     }
     //visual cue
@@ -91,6 +112,8 @@ public class PlotManager : MonoBehaviour
         isPlanted = false;
         plant.gameObject.SetActive(false);
         gm.Transaction(selectedPlant.buyPrice);
+        isDry = true;
+        plot.sprite = dryPlot;
     }
    void UpdatePlant()
     {

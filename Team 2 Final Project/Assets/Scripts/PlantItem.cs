@@ -1,3 +1,7 @@
+/* Adam Krenek
+ * FinalGameProject
+ * Let's the player buy plants and show them the type of plants up for sale
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
