@@ -540,7 +540,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1856618417}
         m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
         m_MethodName: SelectTool
         m_Mode: 3
@@ -1913,6 +1913,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1856618414}
     m_Modifications:
     - target: {fileID: 6516128106702798817, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: isPrepared
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516128106702798817, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
       propertyPath: selectedPlant
       value: 
       objectReference: {fileID: 11400000, guid: be04f1610940e0a468364ca785c4c3e3, type: 2}
@@ -2195,6 +2199,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1856618414}
     m_Modifications:
+    - target: {fileID: 6516128106702798817, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: isPrepared
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6516128106702798817, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
       propertyPath: selectedPlant
       value: 
@@ -2606,8 +2614,9 @@ MonoBehaviour:
   buyColor: {r: 0, g: 1, b: 0, a: 1}
   cancelColor: {r: 1, g: 0, b: 0, a: 1}
   buttonImages:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2057751383}
+  - {fileID: 2130936699}
+  - {fileID: 321418672}
   normalButton: {fileID: 0}
   selectedButton: {fileID: 0}
 --- !u!61 &1856618418
@@ -2907,7 +2916,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1856618417}
         m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
         m_MethodName: SelectTool
         m_Mode: 3
@@ -3077,7 +3086,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1856618417}
         m_TargetAssemblyTypeName: GardenManager, Assembly-CSharp
         m_MethodName: SelectTool
         m_Mode: 3
@@ -3134,6 +3143,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1856618414}
     m_Modifications:
+    - target: {fileID: 6516128106702798817, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: isPrepared
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6516128106702798817, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: normalPlot
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     - target: {fileID: 7114059688991690719, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
       propertyPath: m_BodyType
       value: 2
