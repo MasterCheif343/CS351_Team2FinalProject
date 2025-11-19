@@ -1,27 +1,29 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class InventoryItem : MonoBehaviour,
-    IBeginDragHandler, IDragHandler, IEndDragHandler
+public class InventoryItem : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
+    [Header("UI")]
     public Image image;
 
+    [HideInInspector] public Item item;
     [HideInInspector] public Transform parentAfterDrag;
 
-    void Awake()
+    public void InitialiseItem(Item newItem)
     {
-        // auto-fill if you forget to drag it in Inspector
-        if (image == null)
-            image = GetComponent<Image>();
+        item = newItem;
+        image.sprite = newItem.image;
     }
 
+    // Drag and drop
     public void OnBeginDrag(PointerEventData eventData)
     {
-        parentAfterDrag = transform.parent;       // original slot
-        transform.SetParent(transform.root);      // move to top of canvas
-        transform.SetAsLastSibling();
         image.raycastTarget = false;
+        parentAfterDrag = transform.parent;
+        transform.SetParent(transform.root);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -31,7 +33,7 @@ public class InventoryItem : MonoBehaviour,
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        transform.SetParent(parentAfterDrag);     // slot chosen in OnDrop
         image.raycastTarget = true;
+        transform.SetParent(parentAfterDrag);
     }
 }
