@@ -1,3 +1,8 @@
+/* Adam Krenek
+ * FinalGameProject
+ * This script lets us creat plant objects
+ * Allows for different plants to be easily implemented in the store and in the game
+ */
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,8 +13,10 @@ public class PlantObject : ScriptableObject
 
     public string plantName;
     public Sprite[] plantStages;
-    public float timeBetweenStages;
+    public int daysBetweenStages;
     public int buyPrice;
     public int sellPrice;
     public Sprite icon;
+    //put sprite of dry plot here
+    public Sprite dryPlanted;
 }
