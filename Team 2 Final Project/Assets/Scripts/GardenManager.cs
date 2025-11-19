@@ -31,7 +31,7 @@ public class GardenManager : MonoBehaviour
     }
 
     //can either plant or use tools, but not both
-    public void SelectTool(int toolNum)
+  /*  public void SelectTool(int toolNum)
     {
         if(toolNum == selectedTool)
         {
@@ -46,7 +46,7 @@ public class GardenManager : MonoBehaviour
             selectedTool = toolNum;
             buttonImages[toolNum - 1].sprite = selectedButton;
         }
-    }
+    } */
 
     public void DeselectAll()
     {

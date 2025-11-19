@@ -17,61 +17,53 @@ public class PlotManager : MonoBehaviour
    
     int plantStage = 0;
     
-    float daysRemaining;
+    int daysRemaining;
    
     BoxCollider2D plantCollider;
    
-    public Color availableColor = Color.green;
+   // public Color availableColor = Color.green;
     
-    public Color unavailableColor = Color.red;
+    //public Color unavailableColor = Color.red;
    
     public PlantObject selectedPlant;
    
     SpriteRenderer plot;
    
-    bool isDry = true;
+   // bool isDry = true;
    
-    public Sprite dryPlot;
+    //public Sprite dryPlot;
    
-    public Sprite normalPlot;
+    //public Sprite normalPlot;
 
-    float growSpeed = 1f;
+   // float growSpeed = 1f;
 
-    public bool isPrepared = true;
+    //public bool isPrepared = true;
 
-    public Sprite unpreparedPlot;
+   // public Sprite unpreparedPlot;
     // Start is called before the first frame update
     void Start()
     {
+
+        daysRemaining = DayProgression.Day;
         plant = transform.GetChild(0).GetComponent<SpriteRenderer>();
         plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
         gm = transform.parent.GetComponent<GardenManager>();
         plot = GetComponent<SpriteRenderer>();
-        plot.sprite = dryPlot;
-        if (isPrepared)
+        //plot.sprite = dryPlot;
+        /*if (isPrepared)
         {
             plot.sprite = dryPlot;
         }
         else
         {
             plot.sprite = unpreparedPlot;
-        }
+        } */
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (isPlanted && !isDry)
-        {
-            daysRemaining -= (1 * growSpeed);
-            if (daysRemaining <= 0 && plantStage < selectedPlant.plantStages.Length - 1)
-            {
-                plantStage++;
-                UpdatePlant();
-                daysRemaining = selectedPlant.daysBetweenStages;
-            }
-        }
     }
 
     private void OnMouseDown()
@@ -83,11 +75,11 @@ public class PlotManager : MonoBehaviour
                 Harvest();
             }
         }
-        else if(gm.isPlanting && gm.selectPlant.plant.buyPrice <= gm.money && isPrepared)
+        else if(gm.isPlanting /* && gm.selectPlant.plant.buyPrice <= gm.money && isPrepared */)
         {
             Plant(gm.selectPlant.plant);
         }
-        if (gm.isSelecting)
+       /* if (gm.isSelecting)
         {
             switch (gm.selectedTool)
             {
@@ -128,10 +120,10 @@ public class PlotManager : MonoBehaviour
                 default:
                     break;
             }
-        }
+        }*/
     }
     //visual cue
-    private void OnMouseOver()
+   /* private void OnMouseOver()
     {
         if (gm.isPlanting)
         {
@@ -180,7 +172,7 @@ public class PlotManager : MonoBehaviour
     private void OnMouseExit()
     {
         plot.color = Color.white;
-    }
+    }*/
 
     void Plant(PlantObject newPlant)
     {
@@ -199,21 +191,49 @@ public class PlotManager : MonoBehaviour
         isPlanted = false;
         plant.gameObject.SetActive(false);
         gm.Transaction(selectedPlant.sellPrice);
-        isDry = true;
-        plot.sprite = dryPlot;
-        growSpeed = 1f;
+        //isDry = true;
+        //plot.sprite = dryPlot;
+        //growSpeed = 1f;
     }
    void UpdatePlant()
     {
-        if (isDry)
+        /* if (isDry)
         {
             plant.sprite = selectedPlant.dryPlanted;
         }
         else
         {
+            --daysRemaining; 
             plant.sprite = selectedPlant.plantStages[plantStage];
-        }
+        } */
+        plant.sprite = selectedPlant.plantStages[plantStage];
         plantCollider.size = plant.sprite.bounds.size;
         plantCollider.offset = new Vector2(0, plant.bounds.size.y / 2);
+    }
+
+    private void HandleDayPassed()
+    {
+        if (!isPlanted)
+        {
+            return;
+        }
+            daysRemaining -= 1;
+        
+        if (daysRemaining <= 0 && plantStage < selectedPlant.plantStages.Length - 1)
+        {
+            plantStage++;
+            UpdatePlant();
+            daysRemaining = selectedPlant.daysBetweenStages;
+        }
+    }
+
+    private void OnEnable()
+    {
+        DayProgression.OnDayChanged += HandleDayPassed;
+    }
+
+    private void OnDisable()
+    {
+        DayProgression.OnDayChanged -= HandleDayPassed;
     }
 }

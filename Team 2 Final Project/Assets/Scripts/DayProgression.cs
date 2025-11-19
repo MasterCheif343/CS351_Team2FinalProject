@@ -18,6 +18,8 @@ public class DayProgression : MonoBehaviour
 {
 
     public static int Day;
+    public static System.Action OnDayChanged;
+
     //set this this in the inspector
     public TMP_Text textbox;
     public Button button;
@@ -34,10 +36,7 @@ public class DayProgression : MonoBehaviour
         Day += 1;
         Debug.Log("Button was clicked!");
         if (textbox != null) textbox.text = "Day: " + Day;
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
+
+        OnDayChanged?.Invoke();
     }
 }
