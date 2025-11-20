@@ -5,28 +5,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class ToggleButton : MonoBehaviour
+using UnityEngine.UI;
+public class ToggleShop: MonoBehaviour
 {
-    //reference to canvas that will be shown or hidden
-    public CanvasGroup togglePlantStore;
-   
-    public void ToggleCanvas()
+    public GameObject plantStore;
+    public Toggle toggleShop;
+
+    private void Start()
     {
-        if(togglePlantStore != null)
-        {
-           if(  togglePlantStore.alpha > 0)
-            {
-                togglePlantStore.alpha = 0f;
-                togglePlantStore.interactable = false;
-                togglePlantStore.blocksRaycasts = false;
-            }
-            else
-            {
-                togglePlantStore.alpha = 1f;
-                togglePlantStore.interactable = true;
-                togglePlantStore.blocksRaycasts = true;
-            }
-        }
+        toggleShop.isOn = plantStore.activeSelf;
+
+        toggleShop.onValueChanged.AddListener(HideOrShowShop);
+    }
+    void HideOrShowShop(bool isOn)
+    {
+        plantStore.SetActive(isOn);
     }
 }
