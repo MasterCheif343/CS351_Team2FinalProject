@@ -10,6 +10,8 @@ using UnityEngine;
 public class PlotManager : MonoBehaviour
 {
     GardenManager gm;
+
+   private SliderController sliderController;
    
     bool isPlanted = false;
     
@@ -18,6 +20,8 @@ public class PlotManager : MonoBehaviour
     int plantStage = 0;
     
     int daysRemaining;
+
+    float carbonRemoval;
    
     BoxCollider2D plantCollider;
    
@@ -43,12 +47,20 @@ public class PlotManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        sliderController = FindObjectOfType<SliderController>();
+    
         daysRemaining = DayProgression.Day;
+
         plant = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
         plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
+
         gm = transform.parent.GetComponent<GardenManager>();
+
         plot = GetComponent<SpriteRenderer>();
+
+        plant.gameObject.SetActive(false);
+
         //plot.sprite = dryPlot;
         /*if (isPrepared)
         {
@@ -59,13 +71,6 @@ public class PlotManager : MonoBehaviour
             plot.sprite = unpreparedPlot;
         } */
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private void OnMouseDown()
     {
         if (isPlanted)
@@ -73,9 +78,10 @@ public class PlotManager : MonoBehaviour
             if (plantStage == selectedPlant.plantStages.Length - 1 && !gm.isPlanting && !gm.isSelecting)
             {
                 Harvest();
+                return;
             }
         }
-        else if(gm.isPlanting /* && gm.selectPlant.plant.buyPrice <= gm.money && isPrepared */)
+        else if(gm.isPlanting && !isPlanted && gm.selectPlant.plant.buyPrice <= gm.money /* && isPrepared */)
         {
             Plant(gm.selectPlant.plant);
         }
@@ -182,15 +188,17 @@ public class PlotManager : MonoBehaviour
         gm.Transaction(-selectedPlant.buyPrice);
 
         plantStage = 0;
-        UpdatePlant();
         daysRemaining = selectedPlant.daysBetweenStages;
+
         plant.gameObject.SetActive(true);
+        UpdatePlant();
     }
     void Harvest()
     {
         isPlanted = false;
         plant.gameObject.SetActive(false);
         gm.Transaction(selectedPlant.sellPrice);
+        Debug.Log("Harvested!");
         //isDry = true;
         //plot.sprite = dryPlot;
         //growSpeed = 1f;
@@ -217,6 +225,10 @@ public class PlotManager : MonoBehaviour
         {
             return;
         }
+        sliderController.Photosynthesis(selectedPlant.CO2RemovingFactor);
+
+        sliderController.SetValue(sliderController.CurrentCO2InAir);
+
             daysRemaining -= 1;
         
         if (daysRemaining <= 0 && plantStage < selectedPlant.plantStages.Length - 1)

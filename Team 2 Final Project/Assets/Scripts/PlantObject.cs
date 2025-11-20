@@ -17,6 +17,7 @@ public class PlantObject : ScriptableObject
     public int buyPrice;
     public int sellPrice;
     public Sprite icon;
+    public  float CO2RemovingFactor;
     //put sprite of dry plot here
-    public Sprite dryPlanted;
+    //public Sprite dryPlanted;
 }

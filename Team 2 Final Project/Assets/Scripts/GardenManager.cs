@@ -16,7 +16,7 @@ public class GardenManager : MonoBehaviour
     public bool isSelecting = false;
     public int money = 100;
     public TextMeshProUGUI moneyText;
-    public int selectedTool = 0;
+   // public int selectedTool = 0;
     // 1 = water, 2 = Fertillizer, and 3 = prepare plot ^
     public Color buyColor = Color.green;
     public Color cancelColor = Color.red;
@@ -60,7 +60,7 @@ public class GardenManager : MonoBehaviour
                 selectPlant = null;
             }
         }
-        if (isSelecting)
+        /*if (isSelecting)
         {
             if(selectedTool > 0)
             {
@@ -68,7 +68,7 @@ public class GardenManager : MonoBehaviour
             }
             isSelecting = false;
             selectedTool = 0;
-        }
+        } */
     }
     public void SelectPlant(PlantItem newPlant)
     {
