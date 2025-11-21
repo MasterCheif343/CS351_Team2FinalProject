@@ -10,9 +10,13 @@ public class SliderController : MonoBehaviour
 
     public Image fill;
 
-    public float CO2inAir = 100;
+    public float CO2inAir = 100f;
 
     public float CurrentCO2InAir;
+
+    public float airPollutionFactor = 0.5f;
+
+    public float currentAirPollution;
 
     public Slider slider;
 
@@ -22,6 +26,7 @@ public class SliderController : MonoBehaviour
 
     public void Start()
     {
+        currentAirPollution = airPollutionFactor;
         CurrentCO2InAir = CO2inAir;
         slider.maxValue = CO2inAir;
         slider.value = CurrentCO2InAir;
@@ -43,7 +48,10 @@ public class SliderController : MonoBehaviour
 
         fill.color = gradient.Evaluate(1f);
     }
-
+    public void AirPollution(float amount)
+    {
+        currentAirPollution += amount * 2;
+    }
     public void Photosynthesis(float amount)
     {
         CurrentCO2InAir -= amount;
