@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d93a0bf8a49bd8f44a91e8dde666bd31, type: 3}
+  m_Name: Radish
+  m_EditorClassIdentifier: 
+  plantName: Radish
+  plantStages:
+  - {fileID: -8520553723163835839, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
+  - {fileID: 121398111367108822, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
+  - {fileID: 7449989984665358701, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
+  - {fileID: -1325689043919491311, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
+  daysBetweenStages: 2
+  buyPrice: 2
+  sellPrice: 3
+  icon: {fileID: -1325689043919491311, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
+  CO2RemovingFactor: 0.5

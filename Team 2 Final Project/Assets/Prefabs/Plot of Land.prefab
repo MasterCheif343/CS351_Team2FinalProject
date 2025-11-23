@@ -208,13 +208,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e042aace4a08aa4ca3c21cef9314e23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableColor: {r: 0, g: 1, b: 0, a: 1}
-  unavailableColor: {r: 1, g: 0, b: 0, a: 1}
+  sliderController: {fileID: 0}
   selectedPlant: {fileID: 11400000, guid: 4ef71e36537b3d047a67d8c77533cf97, type: 2}
-  dryPlot: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  normalPlot: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  isPrepared: 1
-  unpreparedPlot: {fileID: 7482667652216324306, guid: db750325989564987a34393247d883b4, type: 3}
+  soldText: {fileID: 0}
 --- !u!114 &3634114703638234059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -261,7 +257,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7378824930140175569}
-  m_BodyType: 0
+  m_BodyType: 2
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0

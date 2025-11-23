@@ -1,3 +1,9 @@
+/* Adam Krenek
+ * Final Game Project
+ * This script manages the panel that shows up when the game is first launched
+ * will tell the player the story and how things work
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

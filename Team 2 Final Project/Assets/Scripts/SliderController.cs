@@ -1,3 +1,10 @@
+/* Adam Krenek
+ * Final Game Project
+ * This script manages how much CO2 is in the game 
+ * and manages how the slider bar looks
+ */
+
+
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -14,23 +21,16 @@ public class SliderController : MonoBehaviour
 
     public float CurrentCO2InAir;
 
-    public float airPollutionFactor = 0.5f;
-
-    public float currentAirPollution;
-
     public Slider slider;
-
-    PlantObject PlantObject;
 
     public bool isAirPurified = false;
 
     public void Start()
     {
-        currentAirPollution = airPollutionFactor;
+        slider = GetComponent<Slider>();
         CurrentCO2InAir = CO2inAir;
         slider.maxValue = CO2inAir;
         slider.value = CurrentCO2InAir;
-        isAirPurified = false;
     }
 
     public void SetValue(float value)
@@ -40,23 +40,41 @@ public class SliderController : MonoBehaviour
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
-    public void SetMaxValue(float value)
+    public void AirPollution(float amount, float duration, System.Action onComplete = null)
     {
-        slider.maxValue = value;
-
-        slider.value = value;
-
-        fill.color = gradient.Evaluate(1f);
+        StartCoroutine(RisingCO2(amount, duration, onComplete));
     }
-    public void AirPollution(float amount)
+
+    private IEnumerator RisingCO2( float amount , float duration, System.Action onComplete)
     {
-        currentAirPollution += amount * 2;
+        float start = CurrentCO2InAir;
+        float end = Mathf.Clamp(CurrentCO2InAir +  amount, 0, CO2inAir);
+        float elpased = 0f;
+
+        while (elpased < 1f)
+        {
+            elpased += Time.deltaTime / duration;
+
+            CurrentCO2InAir = Mathf.Lerp(start, end, elpased);
+
+            SetValue(CurrentCO2InAir);
+
+            yield return null;
+        }
+        CurrentCO2InAir = end;
+        SetValue(CurrentCO2InAir);
+
+        onComplete?.Invoke();
     }
     public void Photosynthesis(float amount)
     {
         CurrentCO2InAir -= amount;
         CurrentCO2InAir = Mathf.Clamp(CurrentCO2InAir, 0, CO2inAir);
-        slider.value = CurrentCO2InAir;
+
+        Debug.Log("CO2 in air after day passes" + CurrentCO2InAir);
+       
+        SetValue(CurrentCO2InAir);
+
         if(slider.value <= 0)
         {
             isAirPurified = true;

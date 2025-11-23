@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plantName: Wheat
   plantStages:
-  - {fileID: -7017202247838496533, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
+  - {fileID: -1684753457181294537, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 3389359819911840689, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
+  - {fileID: 2409062927273309327, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 2409062927273309327, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   daysBetweenStages: 1
   buyPrice: 2

@@ -103,7 +103,7 @@ RectTransform:
   m_GameObject: {fileID: 7469236414641389686}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 1, z: 2}
   m_Children:
   - {fileID: 7469236415959202211}
   m_Father: {fileID: 0}
@@ -322,8 +322,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 48.936096}
-  m_SizeDelta: {x: 253.71667, y: 97.87219}
+  m_AnchoredPosition: {x: -77.720276, y: 48.936096}
+  m_SizeDelta: {x: 409.1572, y: 97.8722}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7469236415959202210
 MonoBehaviour:
@@ -420,5 +420,7 @@ MonoBehaviour:
   fill: {fileID: 7469236414582275538}
   CO2inAir: 100
   CurrentCO2InAir: 0
+  airPollutionFactor: 0.5
+  currentAirPollution: 0
   slider: {fileID: 7469236415959202210}
   isAirPurified: 0

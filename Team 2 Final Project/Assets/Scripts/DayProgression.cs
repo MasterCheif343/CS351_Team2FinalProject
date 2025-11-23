@@ -16,6 +16,11 @@ using UnityEngine.SceneManagement;
 
 public class DayProgression : MonoBehaviour
 {
+    public SliderController sc;
+    public float baseIncrease = 2f;
+    public float multiplier = 1f;
+    public int daysUntilMultInc = 5;
+    public float lerpDuration = 2f;
 
     public static int Day;
     public static System.Action OnDayChanged;
@@ -37,6 +42,15 @@ public class DayProgression : MonoBehaviour
         Debug.Log("Button was clicked!");
         if (textbox != null) textbox.text = "Day: " + Day;
 
+        if (Day % daysUntilMultInc == 0)
+        {
+            multiplier *= 2f;
+        }
+        float airPollution = baseIncrease * multiplier;
+
         OnDayChanged?.Invoke();
+
+        sc.AirPollution(airPollution, lerpDuration);
+    
     }
 }

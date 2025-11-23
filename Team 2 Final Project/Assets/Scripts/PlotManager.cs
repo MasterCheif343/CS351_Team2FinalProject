@@ -5,13 +5,14 @@
  */
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlotManager : MonoBehaviour
 {
     GardenManager gm;
 
-   private SliderController sliderController;
+   public SliderController sliderController;
    
     bool isPlanted = false;
     
@@ -20,8 +21,6 @@ public class PlotManager : MonoBehaviour
     int plantStage = 0;
     
     int daysRemaining;
-
-    float carbonRemoval;
    
     BoxCollider2D plantCollider;
    
@@ -32,6 +31,8 @@ public class PlotManager : MonoBehaviour
     public PlantObject selectedPlant;
    
     SpriteRenderer plot;
+
+    public TextMeshProUGUI soldText;
    
    // bool isDry = true;
    
@@ -47,10 +48,10 @@ public class PlotManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sliderController = FindObjectOfType<SliderController>();
-    
-        daysRemaining = DayProgression.Day;
-
+        if (sliderController == null)
+        {
+            sliderController = FindObjectOfType<SliderController>();
+        }
         plant = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         plantCollider = transform.GetChild(0).GetComponent<BoxCollider2D>();
@@ -75,7 +76,8 @@ public class PlotManager : MonoBehaviour
     {
         if (isPlanted)
         {
-            if (plantStage == selectedPlant.plantStages.Length - 1 && !gm.isPlanting && !gm.isSelecting)
+            if (plantStage == selectedPlant.plantStages.Length - 1 && 
+                !gm.isPlanting && !gm.isSelecting)
             {
                 Harvest();
                 return;
@@ -199,11 +201,28 @@ public class PlotManager : MonoBehaviour
         plant.gameObject.SetActive(false);
         gm.Transaction(selectedPlant.sellPrice);
         Debug.Log("Harvested!");
-        //isDry = true;
-        //plot.sprite = dryPlot;
-        //growSpeed = 1f;
+        if (soldText != null)
+        {
+            soldText.text = "Sold: " + selectedPlant.name;
+            StartCoroutine(FadeText());
+        }
+            //isDry = true;
+            //plot.sprite = dryPlot;
+            //growSpeed = 1f;
+        }
+
+    private IEnumerator FadeText()
+    {
+        soldText.alpha = 1f;
+        yield return new WaitForSeconds(2f);
+
+        while (soldText.alpha > 0)
+        {
+           soldText.alpha -= Time.deltaTime;
+            yield return null;
+        }
     }
-   void UpdatePlant()
+        void UpdatePlant()
     {
         /* if (isDry)
         {
@@ -227,9 +246,7 @@ public class PlotManager : MonoBehaviour
         }
         sliderController.Photosynthesis(selectedPlant.CO2RemovingFactor);
 
-        sliderController.SetValue(sliderController.CurrentCO2InAir);
-
-            daysRemaining -= 1;
+            --daysRemaining;
         
         if (daysRemaining <= 0 && plantStage < selectedPlant.plantStages.Length - 1)
         {
@@ -237,6 +254,8 @@ public class PlotManager : MonoBehaviour
             UpdatePlant();
             daysRemaining = selectedPlant.daysBetweenStages;
         }
+
+        Debug.Log("Plot has gone through a day");
     }
 
     private void OnEnable()

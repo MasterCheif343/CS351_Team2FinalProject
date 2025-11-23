@@ -12,18 +12,26 @@ using TMPro;
 public class GardenManager : MonoBehaviour
 {
     public PlantItem selectPlant;
+
     public bool isPlanting = false;
     public bool isSelecting = false;
+
     public int money = 100;
+
     public TextMeshProUGUI moneyText;
+
    // public int selectedTool = 0;
     // 1 = water, 2 = Fertillizer, and 3 = prepare plot ^
     public Color buyColor = Color.green;
+
     public Color cancelColor = Color.red;
 
     public Image[] buttonImages;
+
     public Sprite normalButton;
+
     public Sprite selectedButton;
+
     // Start is called before the first frame update
     void Start()
     {
