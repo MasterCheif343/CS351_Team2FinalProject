@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9abe3756f86c144881a29b085ebc747, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sc: {fileID: 0}
+  sc: {fileID: 986123454}
   baseIncrease: 2
   multiplier: 1
   daysUntilMultInc: 5
@@ -6843,7 +6843,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.size
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[2]
@@ -6857,24 +6857,29 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[4]
+      value: To move the camera click and hold the right mouse button and move the
+        mouse.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
+      propertyPath: sentences.Array.data[5]
       value: To buy some plants, click on the toggle shop button on the bottom right
         corner to buy different kinds of plants
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
-      propertyPath: sentences.Array.data[5]
+      propertyPath: sentences.Array.data[6]
       value: Once you have selected the plant you want to plant, click on the dirt
         colored plot of land to plant your recently purchased plant.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
-      propertyPath: sentences.Array.data[6]
+      propertyPath: sentences.Array.data[7]
       value: You'll have to wait a few days before you can harvest your plants
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
-      propertyPath: sentences.Array.data[7]
+      propertyPath: sentences.Array.data[8]
       value: To harvest your plants, simply click on them.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
-      propertyPath: sentences.Array.data[8]
+      propertyPath: sentences.Array.data[9]
       value: To win you'll have to make the bar go down to 0.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436796, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}

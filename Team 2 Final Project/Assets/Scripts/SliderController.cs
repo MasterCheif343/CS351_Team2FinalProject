@@ -51,7 +51,7 @@ public class SliderController : MonoBehaviour
         float end = Mathf.Clamp(CurrentCO2InAir +  amount, 0, CO2inAir);
         float elpased = 0f;
 
-        while (elpased < 1f)
+        while (elpased < 6.5f)
         {
             elpased += Time.deltaTime / duration;
 
