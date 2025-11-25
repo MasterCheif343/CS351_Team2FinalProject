@@ -20,6 +20,7 @@ public class GardenManager : MonoBehaviour
 
     public TextMeshProUGUI moneyText;
 
+    public ToggleButton toggleButton;
    // public int selectedTool = 0;
     // 1 = water, 2 = Fertillizer, and 3 = prepare plot ^
     public Color buyColor = Color.green;
@@ -29,6 +30,8 @@ public class GardenManager : MonoBehaviour
     public Image[] buttonImages;
 
     public Sprite normalButton;
+
+    public ToggleShop toggleShop;
 
     public Sprite selectedButton;
 
@@ -58,10 +61,20 @@ public class GardenManager : MonoBehaviour
 
     public void DeselectAll()
     {
-        if (isPlanting)
+        if (isPlanting || !toggleShop)
         {
             isPlanting = false;
             if(selectPlant != null)
+            {
+                selectPlant.buttonImage.color = buyColor;
+                selectPlant.buttonText.text = "Buy";
+                selectPlant = null;
+            }
+        }
+        if (!toggleButton.openShop)
+        {
+            isPlanting = false;
+            if (selectPlant != null)
             {
                 selectPlant.buttonImage.color = buyColor;
                 selectPlant.buttonText.text = "Buy";

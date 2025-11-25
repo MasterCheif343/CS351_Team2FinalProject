@@ -10,7 +10,7 @@ public class ToggleButton : MonoBehaviour
 {
     //reference to canvas that will be shown or hidden
     public CanvasGroup togglePlantStore;
-   
+    public bool openShop { get; private set; }
     public void ToggleCanvas()
     {
         if(togglePlantStore != null)
@@ -20,12 +20,16 @@ public class ToggleButton : MonoBehaviour
                 togglePlantStore.alpha = 0f;
                 togglePlantStore.interactable = false;
                 togglePlantStore.blocksRaycasts = false;
+
+                openShop = false;
             }
             else
             {
                 togglePlantStore.alpha = 1f;
                 togglePlantStore.interactable = true;
                 togglePlantStore.blocksRaycasts = true;
+
+                openShop = true;
             }
         }
     }

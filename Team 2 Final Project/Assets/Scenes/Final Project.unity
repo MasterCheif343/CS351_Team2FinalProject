@@ -4066,6 +4066,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1334548650}
   m_CullTransparentMesh: 1
+--- !u!114 &1347944136 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2878248784735401690, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+  m_PrefabInstance: {fileID: 2878248785772403692}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fea79979d804df408cd0bde0d41e6c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1350163232 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7793889692298612654, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
@@ -4707,6 +4718,7 @@ MonoBehaviour:
   isSelecting: 0
   money: 100
   moneyText: {fileID: 830949686}
+  toggleButton: {fileID: 0}
   buyColor: {r: 0, g: 1, b: 0, a: 1}
   cancelColor: {r: 1, g: 0, b: 0, a: 1}
   buttonImages:
@@ -4714,6 +4726,7 @@ MonoBehaviour:
   - {fileID: 2130936699}
   - {fileID: 321418672}
   normalButton: {fileID: 0}
+  toggleShop: {fileID: 1347944136}
   selectedButton: {fileID: 0}
 --- !u!61 &1856618418
 BoxCollider2D:
@@ -6972,7 +6985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436797, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436799, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_Color.a
@@ -6989,6 +7002,10 @@ PrefabInstance:
     - target: {fileID: 8915289272809436799, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_Color.r
       value: 0.20754719
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915289272809436799, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
