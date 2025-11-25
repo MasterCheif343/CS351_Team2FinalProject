@@ -16,12 +16,12 @@ public class GardenManager : MonoBehaviour
     public bool isPlanting = false;
     public bool isSelecting = false;
 
-    public int money = 100;
+    public int money = 50;
 
     public TextMeshProUGUI moneyText;
 
-    public ToggleButton toggleButton;
-   // public int selectedTool = 0;
+    public ToggleShop toggleShop;
+    // public int selectedTool = 0;
     // 1 = water, 2 = Fertillizer, and 3 = prepare plot ^
     public Color buyColor = Color.green;
 
@@ -31,13 +31,11 @@ public class GardenManager : MonoBehaviour
 
     public Sprite normalButton;
 
-    public ToggleShop toggleShop;
-
     public Sprite selectedButton;
 
     // Start is called before the first frame update
     void Start()
-    {
+    { 
         moneyText.text = "$" + money;
     }
 
@@ -61,23 +59,15 @@ public class GardenManager : MonoBehaviour
 
     public void DeselectAll()
     {
-        if (isPlanting || !toggleShop)
+        if (isPlanting)
         {
             isPlanting = false;
+
             if(selectPlant != null)
             {
                 selectPlant.buttonImage.color = buyColor;
                 selectPlant.buttonText.text = "Buy";
-                selectPlant = null;
-            }
-        }
-        if (!toggleButton.openShop)
-        {
-            isPlanting = false;
-            if (selectPlant != null)
-            {
-                selectPlant.buttonImage.color = buyColor;
-                selectPlant.buttonText.text = "Buy";
+
                 selectPlant = null;
             }
         }

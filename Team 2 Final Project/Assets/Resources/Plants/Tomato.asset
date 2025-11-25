@@ -22,4 +22,4 @@ MonoBehaviour:
   buyPrice: 4
   sellPrice: 2
   icon: {fileID: 5952551379221341443, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
-  CO2RemovingFactor: 2
+  CO2RemovingFactor: 1.5

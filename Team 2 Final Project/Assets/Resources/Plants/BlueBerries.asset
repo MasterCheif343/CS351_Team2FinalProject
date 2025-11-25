@@ -19,7 +19,7 @@ MonoBehaviour:
   - {fileID: 5808869252666709706, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: -7652076332135382777, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   daysBetweenStages: 2
-  buyPrice: 8
-  sellPrice: 6
+  buyPrice: 10
+  sellPrice: 8
   icon: {fileID: -7652076332135382777, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   CO2RemovingFactor: 2.5

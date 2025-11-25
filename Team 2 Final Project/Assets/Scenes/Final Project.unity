@@ -711,7 +711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textBox: {fileID: 1102712593}
-  textBox2: {fileID: 1334548652}
   gm: {fileID: 1856618417}
   sliderController: {fileID: 986123454}
 --- !u!114 &200374412
@@ -728,7 +727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sc: {fileID: 986123454}
   baseIncrease: 2
-  multiplier: 1
+  multiplier: 2
   daysUntilMultInc: 5
   lerpDuration: 2
   textbox: {fileID: 118439855}
@@ -925,17 +924,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
---- !u!114 &321418672 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4199247940580984367, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
-  m_PrefabInstance: {fileID: 4199247940297339807}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &322613370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7793889692298612654, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
@@ -1824,6 +1812,11 @@ Transform:
 --- !u!1 &998143517 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4199247940990599486, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
+  m_PrefabInstance: {fileID: 4199247940297339807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &998143518 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 4822431825954095855, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
   m_PrefabInstance: {fileID: 4199247940297339807}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &998143522 stripped
@@ -3927,6 +3920,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+--- !u!114 &1284375526 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+  m_PrefabInstance: {fileID: 2878248785772403692}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1305261772 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7469236414641389682, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
@@ -3949,7 +3953,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1334548651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4716,17 +4720,13 @@ MonoBehaviour:
   selectPlant: {fileID: 0}
   isPlanting: 0
   isSelecting: 0
-  money: 100
+  money: 50
   moneyText: {fileID: 830949686}
-  toggleButton: {fileID: 0}
+  toggleShop: {fileID: 1347944136}
   buyColor: {r: 0, g: 1, b: 0, a: 1}
   cancelColor: {r: 1, g: 0, b: 0, a: 1}
-  buttonImages:
-  - {fileID: 2057751383}
-  - {fileID: 2130936699}
-  - {fileID: 321418672}
+  buttonImages: []
   normalButton: {fileID: 0}
-  toggleShop: {fileID: 1347944136}
   selectedButton: {fileID: 0}
 --- !u!61 &1856618418
 BoxCollider2D:
@@ -5525,17 +5525,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
---- !u!114 &2057751383 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4199247939934124232, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
-  m_PrefabInstance: {fileID: 4199247940297339807}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2070588846
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5625,17 +5614,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
---- !u!114 &2130936699 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4199247939844255972, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
-  m_PrefabInstance: {fileID: 4199247940297339807}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2878248785772403692
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5670,6 +5648,10 @@ PrefabInstance:
     - target: {fileID: 2878248784735401688, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
       propertyPath: m_Name
       value: Toggle Shop
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401688, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2878248784735401689, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
       propertyPath: m_Pivot.x
@@ -5771,6 +5753,50 @@ PrefabInstance:
       propertyPath: plantStore
       value: 
       objectReference: {fileID: 998143517}
+    - target: {fileID: 2878248784735401690, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: storeToggle
+      value: 
+      objectReference: {fileID: 1284375526}
+    - target: {fileID: 2878248784735401690, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: togglePlantStore
+      value: 
+      objectReference: {fileID: 998143518}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1347944136}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ToggleCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ToggleShop, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 7014052325024697488, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -5798,7 +5824,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018614672088773061, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
       propertyPath: m_text
-      value: 'Money: '
+      value: Hello!
       objectReference: {fileID: 0}
     - target: {fileID: 3018614672088773061, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
       propertyPath: m_fontColor.g
@@ -5814,7 +5840,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018614672088773083, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
       propertyPath: m_Name
-      value: Current MoneyText
+      value: Game Text
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018614672088773083, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3018614673059599352, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
       propertyPath: m_Name
@@ -5919,19 +5949,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4199247939224510089, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4199247939224510089, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4199247939224510089, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -6.3423996
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4199247939506253498, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -2
+      value: -181.4
       objectReference: {fileID: 0}
     - target: {fileID: 4199247939745644867, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -5943,11 +5973,11 @@ PrefabInstance:
       objectReference: {fileID: 1856618417}
     - target: {fileID: 4199247940031943686, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4199247940031943686, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4199247940990599482, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_Pivot.x
@@ -6039,7 +6069,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4199247940990599486, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4199247941007346296, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -6047,6 +6077,18 @@ PrefabInstance:
       objectReference: {fileID: 1856618417}
     - target: {fileID: 4199247941093948075, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822431825954095855, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
+      propertyPath: m_Alpha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822431825954095855, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822431825954095855, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
+      propertyPath: m_BlocksRaycasts
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -6856,40 +6898,50 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.size
-      value: 10
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
+      propertyPath: sentences.Array.data[0]
+      value: Welcome to your Garden, since there's a lot air pollution, you'll have
+        to help fix it with your garden.
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
+      propertyPath: sentences.Array.data[1]
+      value: 'The bar at the bottom of the screen shows you how bad the air quality
+        is. '
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: The bar at the bottom of the screen shows you how bad the air quality
-        is and the CO2 meter at the top left tells you how much CO2 is in the air.
+      value: When the bar is red, it means that we are at the maximum in bad air
+        quality. The bar will turn different colors when there is CO2 is in the air.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: When the bar is red, it means that we are at the maximum in bad air
-        quality. The bar will turn yellow and then green as less CO2 is in the air.
-      objectReference: {fileID: 0}
-    - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
-      propertyPath: sentences.Array.data[4]
       value: To move the camera click and hold the right mouse button and move the
         mouse.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
-      propertyPath: sentences.Array.data[5]
+      propertyPath: sentences.Array.data[4]
       value: To buy some plants, click on the toggle shop button on the bottom right
-        corner to buy different kinds of plants
+        corner to buy some plants
+      objectReference: {fileID: 0}
+    - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
+      propertyPath: sentences.Array.data[5]
+      value: Once you have selected the plant you want to plant, click on a plot
+        of land to plant your recently purchased plant.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: Once you have selected the plant you want to plant, click on the dirt
-        colored plot of land to plant your recently purchased plant.
+      value: You'll have to wait a few days before you can harvest your plants; after
+        your plants are done, you can simply click on them to harvest.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: You'll have to wait a few days before you can harvest your plants
+      value: To win you'll have to make the bar go down to 0.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[8]
-      value: To harvest your plants, simply click on them.
+      value: To win you'll have to make the bar go down to 0.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[9]
@@ -6985,7 +7037,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436797, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436799, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_Color.a
@@ -7005,7 +7057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436799, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
