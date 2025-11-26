@@ -23,3 +23,4 @@ MonoBehaviour:
   sellPrice: 8
   icon: {fileID: -7652076332135382777, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   CO2RemovingFactor: 2.5
+  description: This plant take 2.5% of CO2 away per day.

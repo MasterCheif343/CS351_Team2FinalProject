@@ -5762,6 +5762,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
+      propertyPath: toggleTransition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2878248784735401691, guid: 3fb2f9d0402cb7344935d800cec891e8, type: 3}
       propertyPath: onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
