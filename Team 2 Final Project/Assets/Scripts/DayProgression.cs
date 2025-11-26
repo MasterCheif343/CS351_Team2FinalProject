@@ -27,13 +27,13 @@ public class DayProgression : MonoBehaviour
 
     //set this this in the inspector
     public TMP_Text textbox;
-    public TMP_Text statusText;
+    //public TMP_Text statusText;
     public Button button;
-    public Button statusReport;
+    //public Button statusReport;
     public Animator dayAnimator;
     public GameObject SunAndMoo;
-    public GameObject DayToNight;
-    public GameObject NightToDay;
+   // public GameObject DayToNight;
+   // public GameObject NightToDay;
     public GameObject PlayerInput;
     public float delay = 5f;
     public Camera mainCamera;
@@ -49,8 +49,8 @@ public class DayProgression : MonoBehaviour
             cameraStartPos = mainCamera.transform.position;
         }
         button.onClick.AddListener(NextDay);
-        statusReport.onClick.AddListener(OnDestroy);
-        statusText.text = "Day's passed:" + Day;
+      //  statusReport.onClick.AddListener(OnDestroy);
+      //  statusText.text = "Day's passed:" + Day;
     }
     private void NextDay()
         {
@@ -62,18 +62,18 @@ public class DayProgression : MonoBehaviour
             mainCamera.transform.position = cameraStartPos;
         }
         if (textbox != null) textbox.text = "Day: " + Day;
-        if (textbox != null) statusText.text = "Day's passed: " + Day;
+      /*  if (textbox != null) statusText.text = "Day's passed: " + Day;
         if (Day % 7 == 0)
         {
             spawnedSunAndMoon = Instantiate(DayToNight);
             button.gameObject.SetActive(false);
         }
-        else
-        {
+      */
+        
             StartCoroutine(HideShowButton(delay));
             spawnedSunAndMoon = Instantiate(SunAndMoo);
             Destroy(spawnedSunAndMoon, delay);
-        }
+        
 
         if (Day % daysUntilMultInc == 0)
         {
@@ -86,7 +86,7 @@ public class DayProgression : MonoBehaviour
         sc.AirPollution(airPollution, lerpDuration);
     
     }
-    private void OnDestroy()
+  /*  private void OnDestroy()
     {
         Debug.Log("Button was clicked!");
         if (mainCamera != null)
@@ -107,7 +107,7 @@ public class DayProgression : MonoBehaviour
             Debug.Log("No clone exists to destroy.");
         }
     }
-
+  */
     private IEnumerator HideShowButton(float delay)
     {
         if (button == null)

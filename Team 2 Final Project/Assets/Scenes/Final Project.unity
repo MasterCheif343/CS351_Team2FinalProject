@@ -319,7 +319,7 @@ PrefabInstance:
       objectReference: {fileID: 986123454}
     - target: {fileID: 8394113304566982653, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8394113304566982653, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -328,7 +328,7 @@ PrefabInstance:
     - target: {fileID: 8394113304566982653, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 5555296638141955081}
+      objectReference: {fileID: 0}
     - target: {fileID: 8394113304566982653, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -731,13 +731,9 @@ MonoBehaviour:
   daysUntilMultInc: 5
   lerpDuration: 2
   textbox: {fileID: 118439855}
-  statusText: {fileID: 5555296637363581989}
   button: {fileID: 118439856}
-  statusReport: {fileID: 5555296637726495863}
   dayAnimator: {fileID: 0}
   SunAndMoo: {fileID: 9096242609374452515, guid: 68ea14f17bf870142bb2708bb9cdb284, type: 3}
-  DayToNight: {fileID: 8515969553009911063, guid: ecab590fa3311b94abb7b76bd161f4f4, type: 3}
-  NightToDay: {fileID: 205884083530799468, guid: 9384734187d65d04183ffbb677f5f049, type: 3}
   PlayerInput: {fileID: 1936532090}
   delay: 7
   mainCamera: {fileID: 519420031}
@@ -6449,7 +6445,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5555296638141955081}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ActivateOnDelay, Assembly-CSharp
         m_MethodName: Deactivate
         m_Mode: 1
@@ -6605,7 +6601,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5555296638141955083}
   - component: {fileID: 5555296638141955082}
-  - component: {fileID: 5555296638141955081}
   m_Layer: 0
   m_Name: Report
   m_TagString: Untagged
@@ -6613,18 +6608,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &5555296638141955081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5555296638141955080}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92e6ff675d5b8e8458526bbcd2ae5430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &5555296638141955082
 SpriteRenderer:
   m_ObjectHideFlags: 0
