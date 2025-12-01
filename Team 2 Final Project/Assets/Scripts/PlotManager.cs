@@ -244,6 +244,9 @@ public class PlotManager : MonoBehaviour
         {
             return;
         }
+
+        Debug.Log("CO2 removing factor: " + selectedPlant.CO2RemovingFactor);
+
         sliderController.Photosynthesis(selectedPlant.CO2RemovingFactor);
 
             --daysRemaining;

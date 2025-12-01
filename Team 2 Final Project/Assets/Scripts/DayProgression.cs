@@ -17,10 +17,10 @@ using UnityEngine.SceneManagement;
 public class DayProgression : MonoBehaviour
 {
     public SliderController sc;
-    public float baseIncrease = 2f;
-    public float multiplier = 1f;
-    public int daysUntilMultInc = 5;
-    public float lerpDuration = 2f;
+    //public float baseIncrease = 2f;
+    //public float multiplier = 1f;
+   // public int daysUntilMultInc = 5;
+    //public float lerpDuration = 2f;
 
     public static int Day = 1;
     public static System.Action OnDayChanged;
@@ -75,7 +75,7 @@ public class DayProgression : MonoBehaviour
             Destroy(spawnedSunAndMoon, delay);
         
 
-        if (Day % daysUntilMultInc == 0)
+      /*  if (Day % daysUntilMultInc == 0)
         {
             multiplier *= 2f;
         }
@@ -83,9 +83,9 @@ public class DayProgression : MonoBehaviour
 
         OnDayChanged?.Invoke();
 
-        sc.AirPollution(airPollution, lerpDuration);
+        sc.AirPollution(airPollution , lerpDuration ); */
     
-    }
+    } 
   /*  private void OnDestroy()
     {
         Debug.Log("Button was clicked!");

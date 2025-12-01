@@ -726,10 +726,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sc: {fileID: 986123454}
-  baseIncrease: 2
-  multiplier: 2
-  daysUntilMultInc: 5
-  lerpDuration: 2
   textbox: {fileID: 118439855}
   button: {fileID: 118439856}
   dayAnimator: {fileID: 0}
@@ -6780,6 +6776,30 @@ PrefabInstance:
     - target: {fileID: 7469236414641389686, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
       propertyPath: m_Name
       value: CO2 Bar Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469236414791327502, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
+      propertyPath: m_Color.b
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469236414791327502, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
+      propertyPath: m_Color.g
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469236414791327502, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9528302
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469236415959202210, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469236415959202210, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7469236415959202210, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 0.990566
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
