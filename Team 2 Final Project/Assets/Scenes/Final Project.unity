@@ -4561,7 +4561,7 @@ GameObject:
   - component: {fileID: 1856618418}
   - component: {fileID: 1856618417}
   m_Layer: 0
-  m_Name: Garden
+  m_Name: Plots of land
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7040,11 +7040,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436797, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_Name
-      value: Dialouge Pannel
+      value: Dialouge pannel
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436797, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272809436799, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: m_Color.a

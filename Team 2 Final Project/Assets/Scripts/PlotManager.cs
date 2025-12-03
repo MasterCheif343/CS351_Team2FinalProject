@@ -245,7 +245,7 @@ public class PlotManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("CO2 removing factor: " + selectedPlant.CO2RemovingFactor);
+        Debug.Log("Day passed and Calling Photosynthesis with CO2 removing factor amount: " + selectedPlant.CO2RemovingFactor);
 
         sliderController.Photosynthesis(selectedPlant.CO2RemovingFactor);
 
@@ -257,8 +257,6 @@ public class PlotManager : MonoBehaviour
             UpdatePlant();
             daysRemaining = selectedPlant.daysBetweenStages;
         }
-
-        Debug.Log("Plot has gone through a day");
     }
 
     private void OnEnable()

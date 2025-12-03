@@ -73,15 +73,14 @@ public class DayProgression : MonoBehaviour
             StartCoroutine(HideShowButton(delay));
             spawnedSunAndMoon = Instantiate(SunAndMoo);
             Destroy(spawnedSunAndMoon, delay);
-        
+
+        OnDayChanged?.Invoke();
 
       /*  if (Day % daysUntilMultInc == 0)
         {
             multiplier *= 2f;
         }
         float airPollution = baseIncrease * multiplier;
-
-        OnDayChanged?.Invoke();
 
         sc.AirPollution(airPollution , lerpDuration ); */
     
