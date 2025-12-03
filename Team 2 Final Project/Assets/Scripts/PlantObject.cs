@@ -11,6 +11,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Plant" , menuName = "Plant")]
 public class PlantObject : ScriptableObject
 {
+    public float maxPlantHealth = 100f;
 
     public string plantName;
 
@@ -28,6 +29,4 @@ public class PlantObject : ScriptableObject
 
     public string description;
   
-    //put sprite of dry plot here
-    //public Sprite dryPlanted;
 }
