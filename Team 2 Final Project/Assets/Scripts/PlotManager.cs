@@ -118,7 +118,14 @@ public class PlotManager : MonoBehaviour
 
     public void PlantTakeDamage(float damage)
     {
+        currentPlantHealth -= damage;
 
+        plantSliderBars.SetHealth(currentPlantHealth);
+
+        if(currentPlantHealth <= 0)
+        {
+            PlantDeath();
+        }
     }
 
     public void PlantDeath()
@@ -127,7 +134,7 @@ public class PlotManager : MonoBehaviour
         plant.gameObject.SetActive(false);
     }
 
-    private IEnumerator FadeText()
+   /* private IEnumerator FadeText()
     {
         soldText.alpha = 1f;
         yield return new WaitForSeconds(2f);
@@ -137,7 +144,7 @@ public class PlotManager : MonoBehaviour
            soldText.alpha -= Time.deltaTime;
             yield return null;
         }
-    }
+    } */
         void UpdatePlant()
     {
         plant.sprite = selectedPlant.plantStages[plantStage];
