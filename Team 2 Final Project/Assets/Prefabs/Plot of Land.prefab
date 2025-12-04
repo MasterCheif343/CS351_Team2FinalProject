@@ -610,9 +610,10 @@ GameObject:
   - component: {fileID: 3634114703638234059}
   - component: {fileID: 4235221885653220627}
   - component: {fileID: 7114059688991690719}
+  - component: {fileID: 2131463372336414521}
   m_Layer: 0
   m_Name: Plot of Land
-  m_TagString: Untagged
+  m_TagString: Plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -626,7 +627,7 @@ Transform:
   m_GameObject: {fileID: 7378824930140175569}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5.9, y: 2.8, z: 1}
+  m_LocalScale: {x: 2.980416, y: 1.1557652, z: 1}
   m_Children:
   - {fileID: 3859341137077399902}
   - {fileID: 4971350568948660111}
@@ -697,8 +698,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sliderController: {fileID: 0}
+  plantSliderBars: {fileID: 2131463372336414521}
+  currentStageProgress: 0
+  totalStages: 0
   selectedPlant: {fileID: 11400000, guid: 4ef71e36537b3d047a67d8c77533cf97, type: 2}
   soldText: {fileID: 0}
+  currentPlantHealth: 0
+  currentPlantProgress: 0
 --- !u!114 &3634114703638234059
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -758,6 +764,82 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2131463372336414521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7378824930140175569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0964f87e89cab14298dcab7ce0a44f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthGradient:
+    serializedVersion: 2
+    key0: {r: 1, g: 0, b: 0.04857254, a: 1}
+    key1: {r: 1, g: 0.8865649, b: 0.023584902, a: 1}
+    key2: {r: 0.20074645, g: 1, b: 0.02352941, a: 0}
+    key3: {r: 1, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 4819
+    ctime1: 28142
+    ctime2: 52814
+    ctime3: 58982
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  progressGradient:
+    serializedVersion: 2
+    key0: {r: 0.009344946, g: 0.045042966, b: 0.6603774, a: 1}
+    key1: {r: 0.25231397, g: 0.8490566, b: 0.611366, a: 1}
+    key2: {r: 0.020520031, g: 0.97520566, b: 0.027433097, a: 0}
+    key3: {r: 0.009630375, g: 0.9811321, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 35466
+    ctime2: 65535
+    ctime3: 65535
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
+  fill1: {fileID: 2417761414498585190}
+  healthSlider: {fileID: 3598061466434516332}
+  progressSlider: {fileID: 6168125269483363633}
+  fill2: {fileID: 8894509492677297643}
+  currentStage: 0
+  maxStages: 0
 --- !u!1 &7567359931231500016
 GameObject:
   m_ObjectHideFlags: 0

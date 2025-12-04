@@ -13,10 +13,16 @@ public class PlotManager : MonoBehaviour
     GardenManager gm;
 
    public SliderController sliderController;
+
+    public PlantSliderBars plantSliderBars;
    
     bool isPlanted = false;
     
     SpriteRenderer plant;
+
+    public int currentStageProgress;
+
+    public int totalStages;
    
     int plantStage = 0;
     
@@ -24,30 +30,24 @@ public class PlotManager : MonoBehaviour
    
     BoxCollider2D plantCollider;
    
-   // public Color availableColor = Color.green;
-    
-    //public Color unavailableColor = Color.red;
-   
     public PlantObject selectedPlant;
    
     SpriteRenderer plot;
 
     public TextMeshProUGUI soldText;
-   
-   // bool isDry = true;
-   
-    //public Sprite dryPlot;
-   
-    //public Sprite normalPlot;
 
-   // float growSpeed = 1f;
+    public float currentPlantHealth;
 
-    //public bool isPrepared = true;
-
-   // public Sprite unpreparedPlot;
+    public int currentPlantProgress;
+   
+  
     // Start is called before the first frame update
     void Start()
-    {
+    {   if(plantSliderBars == null)
+        {
+            plantSliderBars = FindObjectOfType<PlantSliderBars>();
+        }
+
         if (sliderController == null)
         {
             sliderController = FindObjectOfType<SliderController>();
@@ -62,15 +62,6 @@ public class PlotManager : MonoBehaviour
 
         plant.gameObject.SetActive(false);
 
-        //plot.sprite = dryPlot;
-        /*if (isPrepared)
-        {
-            plot.sprite = dryPlot;
-        }
-        else
-        {
-            plot.sprite = unpreparedPlot;
-        } */
     }
     private void OnMouseDown()
     {
@@ -87,101 +78,8 @@ public class PlotManager : MonoBehaviour
         {
             Plant(gm.selectPlant.plant);
         }
-       /* if (gm.isSelecting)
-        {
-            switch (gm.selectedTool)
-            {
-                //Watering plot
-                case 1:
-                    if (isPrepared)
-                    {
-                        Debug.Log("Watered Plot!");
-                        isDry = false;
-                        plot.sprite = normalPlot;
-                        if (isPlanted)
-                        {
-                            UpdatePlant();
-                        }
-                    }
-                    break;
-
-                case 2:
-                    Debug.Log("Fertilized!");
-                    if (gm.money >= 10)
-                    {
-                        gm.Transaction(-10);
-                        if (growSpeed < 2) { growSpeed += .2f; }
-                    }
-                    break;
-
-                case 3:
-                    
-                    if (gm.money >= 20 && !isPrepared)
-                    {
-                        Debug.Log("Prepared Plot!");
-                        gm.Transaction(-20);
-                    }
-                        isPrepared = true;
-                        plot.sprite = dryPlot;
-                        break;
-                    
-                default:
-                    break;
-            }
-        }*/
     }
-    //visual cue
-   /* private void OnMouseOver()
-    {
-        if (gm.isPlanting)
-        {
-            if(isPlanted || gm.selectPlant.plant.buyPrice > gm.money ||!isPrepared )
-            {
-                //can't buy
-                plot.color = unavailableColor;
-            }
-            else
-            {
-                //can buy
-                plot.color = availableColor;
-            }
-        }
-        if (gm.isSelecting)
-        {
-            switch (gm.selectedTool)
-            {
-                case 1:
-                case 2:
-                    if (isPrepared && gm.money >= (gm.selectedTool -1) * 10)
-                    {
-                        plot.color = availableColor;
-                    }
-                    else
-                    {
-                        plot.color = unavailableColor;
-                    }
-                        break;
-                case 3:
-                    if (!isPrepared && gm.money >= 20)
-                    {
-                        plot.color = availableColor;
-                    }
-                    else
-                    {
-                        plot.color = unavailableColor;
-                    }
-                    break;
-                default:
-                    plot.color = unavailableColor;
-                    break;
-            }
-        }
-    }
-    private void OnMouseExit()
-    {
-        plot.color = Color.white;
-    }*/
-
+    
     void Plant(PlantObject newPlant)
     {
         selectedPlant = newPlant;
@@ -191,6 +89,16 @@ public class PlotManager : MonoBehaviour
 
         plantStage = 0;
         daysRemaining = selectedPlant.daysBetweenStages;
+
+        currentPlantHealth = selectedPlant.maxPlantHealth;
+        currentPlantProgress = 0;
+
+        if(plantSliderBars != null)
+        {
+            plantSliderBars.Initialize(selectedPlant.maxPlantHealth);
+            plantSliderBars.SetMaxProgress(selectedPlant.plantStages.Length);
+            plantSliderBars.SetCurrentProgress(0);
+        }
 
         plant.gameObject.SetActive(true);
         UpdatePlant();
@@ -204,12 +112,20 @@ public class PlotManager : MonoBehaviour
         if (soldText != null)
         {
             soldText.text = "Sold: " + selectedPlant.name;
-            StartCoroutine(FadeText());
-        }
-            //isDry = true;
-            //plot.sprite = dryPlot;
-            //growSpeed = 1f;
-        }
+            //StartCoroutine(FadeText());
+        }    
+    }
+
+    public void PlantTakeDamage(float damage)
+    {
+
+    }
+
+    public void PlantDeath()
+    {
+        isPlanted = false;
+        plant.gameObject.SetActive(false);
+    }
 
     private IEnumerator FadeText()
     {
@@ -224,15 +140,6 @@ public class PlotManager : MonoBehaviour
     }
         void UpdatePlant()
     {
-        /* if (isDry)
-        {
-            plant.sprite = selectedPlant.dryPlanted;
-        }
-        else
-        {
-            --daysRemaining; 
-            plant.sprite = selectedPlant.plantStages[plantStage];
-        } */
         plant.sprite = selectedPlant.plantStages[plantStage];
         plantCollider.size = plant.sprite.bounds.size;
         plantCollider.offset = new Vector2(0, plant.bounds.size.y / 2);
@@ -245,17 +152,25 @@ public class PlotManager : MonoBehaviour
             return;
         }
 
+        currentPlantProgress = plantStage;
+
         Debug.Log("Day passed and Calling Photosynthesis with CO2 removing factor amount: " + selectedPlant.CO2RemovingFactor);
 
         sliderController.Photosynthesis(selectedPlant.CO2RemovingFactor);
 
-            --daysRemaining;
+        --daysRemaining;
         
         if (daysRemaining <= 0 && plantStage < selectedPlant.plantStages.Length - 1)
         {
             plantStage++;
             UpdatePlant();
             daysRemaining = selectedPlant.daysBetweenStages;
+            
+            currentPlantProgress = plantStage;
+            if (plantSliderBars != null)
+            {
+                plantSliderBars.SetCurrentProgress(currentPlantProgress);
+            }
         }
     }
 
