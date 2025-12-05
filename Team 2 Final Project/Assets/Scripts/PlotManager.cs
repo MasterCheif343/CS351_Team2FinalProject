@@ -34,8 +34,6 @@ public class PlotManager : MonoBehaviour
    
     SpriteRenderer plot;
 
-    public TextMeshProUGUI soldText;
-
     public float currentPlantHealth;
 
     public int currentPlantProgress;
@@ -109,11 +107,11 @@ public class PlotManager : MonoBehaviour
         plant.gameObject.SetActive(false);
         gm.Transaction(selectedPlant.sellPrice);
         Debug.Log("Harvested!");
-        if (soldText != null)
+        /*if (soldText != null)
         {
             soldText.text = "Sold: " + selectedPlant.name;
             //StartCoroutine(FadeText());
-        }    
+        }    */
     }
 
     public void PlantTakeDamage(float damage)

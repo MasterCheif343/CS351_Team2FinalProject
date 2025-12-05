@@ -4300,12 +4300,12 @@ GameObject:
   - component: {fileID: 1334548653}
   - component: {fileID: 1334548652}
   m_Layer: 5
-  m_Name: Current CO2 Text
+  m_Name: Current Money Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1334548651
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4322,7 +4322,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 466.96, y: 393}
+  m_AnchoredPosition: {x: 325, y: 393}
   m_SizeDelta: {x: 855.93, y: 138.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1334548652
@@ -4345,7 +4345,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'CO2: '
+  m_text: 'Current Money: $'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5154,6 +5154,7 @@ MonoBehaviour:
   isSelecting: 0
   money: 50
   moneyText: {fileID: 830949686}
+  currentMoneyText: {fileID: 1334548652}
   toggleShop: {fileID: 1347944136}
   buyColor: {r: 0, g: 1, b: 0, a: 1}
   cancelColor: {r: 1, g: 0, b: 0, a: 1}
@@ -6391,12 +6392,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1860191009}
     m_Modifications:
     - target: {fileID: 3018614672088773060, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1160.751
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018614672088773060, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 551
+      value: 411.44904
       objectReference: {fileID: 0}
     - target: {fileID: 3018614672088773060, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 475
+      value: 470.56
       objectReference: {fileID: 0}
     - target: {fileID: 3018614672088773061, guid: 9fef23c338acb394396b3b970fd6345f, type: 3}
       propertyPath: m_text
@@ -7390,6 +7395,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1856618414}
     m_Modifications:
+    - target: {fileID: 365177003278197961, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 365177003278197961, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508335623447922523, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4508335623447922523, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6516128106702798817, guid: 9ef0c471c6c1ec244b15f89fdb4c05e9, type: 3}
       propertyPath: soldText
       value: 

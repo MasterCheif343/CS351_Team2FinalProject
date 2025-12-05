@@ -20,6 +20,8 @@ public class GardenManager : MonoBehaviour
 
     public TextMeshProUGUI moneyText;
 
+    public TextMeshProUGUI currentMoneyText;
+
     public ToggleShop toggleShop;
     // public int selectedTool = 0;
     // 1 = water, 2 = Fertillizer, and 3 = prepare plot ^
@@ -37,6 +39,8 @@ public class GardenManager : MonoBehaviour
     void Start()
     { 
         moneyText.text = "$" + money;
+
+        currentMoneyText.text = "Current Money: $" + money;
     }
 
     //can either plant or use tools, but not both
