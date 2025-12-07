@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a0bf8a49bd8f44a91e8dde666bd31, type: 3}
   m_Name: Chili Peppers
   m_EditorClassIdentifier: 
+  maxPlantHealth: 100
   plantName: Chili Peppers
   plantStages:
   - {fileID: 4140736417263544742, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
@@ -19,8 +20,9 @@ MonoBehaviour:
   - {fileID: 8337780805779089026, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 2125331982801898114, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   daysBetweenStages: 3
-  buyPrice: 7
-  sellPrice: 6
+  buyPrice: 8
+  sellPrice: 10
   icon: {fileID: 2125331982801898114, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   CO2RemovingFactor: 2
   description: This plant takes 2% CO2 per day.
+  unlockCost: 15

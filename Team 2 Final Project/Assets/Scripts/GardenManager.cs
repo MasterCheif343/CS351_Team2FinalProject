@@ -87,6 +87,12 @@ public class GardenManager : MonoBehaviour
     }
     public void SelectPlant(PlantItem newPlant)
     {
+        if (!newPlant.isUnlocked)
+        {
+            TryUnlockPlant(newPlant);
+            return;
+        }
+
         if(selectPlant == newPlant)
         {
             DeselectAll();
@@ -95,15 +101,35 @@ public class GardenManager : MonoBehaviour
         {
             DeselectAll();
             selectPlant  = newPlant;
+
             selectPlant.buttonImage.color = cancelColor;
             selectPlant.buttonText.text = "Cancel";
             isPlanting = true;
         }
     }
 
+    public void TryUnlockPlant (PlantItem plantToUnlock)
+    {
+        int cost = plantToUnlock.plant.unlockCost;
+
+        if(money >= plantToUnlock.plant.unlockCost)
+        {
+            Transaction(-cost);
+
+            plantToUnlock.SetUnlocked(true);
+
+            Debug.Log(plantToUnlock.plant.name + " unlocked for $" + cost);
+        }
+        else
+        {
+            Debug.Log("Not enough money! Need $" + plantToUnlock.plant.unlockCost);
+        }
+    }
     public void Transaction(int value)
     {
         money += value;
         moneyText.text = "$" + money;
+
+        currentMoneyText.text = "Current Money: $" + money;
     }
 }

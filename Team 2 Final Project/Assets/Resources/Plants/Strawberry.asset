@@ -12,15 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a0bf8a49bd8f44a91e8dde666bd31, type: 3}
   m_Name: Strawberry
   m_EditorClassIdentifier: 
+  maxPlantHealth: 100
   plantName: Stawberry
   plantStages:
   - {fileID: -2598337577312426136, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 4168799286152249391, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: -7196828219463667836, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 5529170504357419524, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
-  daysBetweenStages: 3
+  daysBetweenStages: 2
   buyPrice: 8
-  sellPrice: 6
+  sellPrice: 10
   icon: {fileID: 5529170504357419524, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   CO2RemovingFactor: 2
   description: This plant takes 2% CO2 per day.
+  unlockCost: 10

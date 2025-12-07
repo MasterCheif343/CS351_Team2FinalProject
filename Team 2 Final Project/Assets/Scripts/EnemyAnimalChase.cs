@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Unity.Profiling;
-using UnityEditor.Experimental.RestService;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Animator))]
@@ -22,6 +21,8 @@ public class EnemyAnimalChase : MonoBehaviour
     private Animator anim;
 
     private SpriteRenderer sr;
+
+    public float stopDistance = 0.5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,57 +32,66 @@ public class EnemyAnimalChase : MonoBehaviour
 
         anim = GetComponent<Animator>();
 
-       GameObject plantObj = GameObject.FindWithTag("Plant");
-
-        if(plantObj != null)
-        {
-            plotTransform = plantObj.transform;
-        }
-        else 
-        { 
-            Debug.LogError("No Object with tag 'Plant' found in scene!"); 
-        }
+        FindClosestPlot();
 
     }
      void Update()
     {   
         if(plotTransform == null)
         {
+            FindClosestPlot();
             return;
         }
 
-        Vector2 plotDirection = plotTransform.position - transform.position;
-
-        float distanceToPlot = plotDirection.magnitude;
-
-        if (distanceToPlot <= chaseRange)
+      float distance = Vector2.Distance(transform.position, plotTransform.position);
+        if (distance <= stopDistance)
         {
-            plotDirection.Normalize();
-
-            plotDirection.y = 0;
-
-            MoveTowardsPlot(plotDirection);
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            anim.SetBool("isMoving", false);
+            return;
         }
 
-    }
-    void MoveTowardsPlot(Vector2 plotDirection)
-    {
-        rb.velocity = new Vector2(plotDirection.x, rb.velocity.y);
-
-        anim.SetBool("isMoving", true);
-
-    }
-
-    private void FacePlot(Vector2 plotDirection)
-    {
-        if (plotDirection.x < 0)
+        if (distance <= chaseRange)
         {
+            Vector2 direction = (plotTransform.position - transform.position).normalized;
+            direction.y = 0;
 
-            sr.flipX = false;
+            rb.velocity = new Vector2(direction.x * speed, rb.velocity.y);
+            anim.SetBool("isMoving", true);
+            FaceTarget(direction);
         }
         else
         {
-            sr.flipX = true;
+            anim.SetBool("isMoving", false);
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
+    void FindClosestPlot()
+    {
+        GameObject[] plots = GameObject.FindGameObjectsWithTag("Plant");
+        if (plots.Length == 0)
+        {
+            plotTransform = null;
+            return;
+        }
+
+        float closestPlot = Mathf.Infinity;
+
+        foreach (GameObject plot in plots)
+        {
+            float dist = Vector2.Distance(transform.position, plot.transform.position);
+            if (dist < closestPlot)
+            {
+                closestPlot = dist;
+                plotTransform = plot.transform;
+            }
+        }
+    }
+    void FaceTarget(Vector2 direction)
+    {
+        sr.flipX = (direction.x > 0);
+
+    }
+
+    
 }

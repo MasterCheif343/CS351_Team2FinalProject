@@ -101,18 +101,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.12099278}
+  m_Offset: {x: 0, y: -0.18024397}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2}
+    oldSize: {x: 2.6666667, y: 2.6666667}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.0782628, y: 1.851713}
+  m_Size: {x: 2.7892773, y: 2.3995585}
   m_EdgeRadius: 0
 --- !u!50 &8257652754934447001
 Rigidbody2D:
@@ -150,6 +150,7 @@ MonoBehaviour:
   chaseRange: 8
   target: {fileID: 0}
   speed: 3
+  stopDistance: 0.5
 --- !u!95 &8257652754934447004
 Animator:
   serializedVersion: 5
@@ -184,9 +185,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 0}
-  health: 100
+  health: 150
   clickDamage: 10
-  damage: 5
+  damage: 15
+  bountyForKill: 13
 --- !u!1 &8257652755150531079
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,7 +252,7 @@ RectTransform:
   m_GameObject: {fileID: 8257652755173906723}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.009604113, y: 0.009604113, z: 0.009604113}
+  m_LocalScale: {x: 0.014310129, y: 0.014310129, z: 0.014310129}
   m_Children:
   - {fileID: 8257652756219210567}
   - {fileID: 8257652755150531078}
@@ -259,7 +261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -349.4518, y: -197.46693}
+  m_AnchoredPosition: {x: 0.733, y: 0.97}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &8257652755173906724
@@ -301,7 +303,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 8257652755704833180}
   m_HandleRect: {fileID: 0}
@@ -543,7 +545,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 349.93, y: 198.21}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 697, y: 392}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &8257652757024788025

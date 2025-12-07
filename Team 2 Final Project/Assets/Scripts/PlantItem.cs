@@ -18,11 +18,18 @@ public class PlantItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI priceText;
 
+    private bool isUnlocked1 = false;
+    public bool isUnlocked { get { return isUnlocked1;  } }
+
     public Image icon;
 
     public Image buttonImage;
 
     public TextMeshProUGUI buttonText;
+
+    public GameObject unlockButton;
+
+    public TextMeshProUGUI unlockCostText;
 
     [Header("Local Description Text")]
    public TMP_Text descriptionText;
@@ -46,6 +53,8 @@ public class PlantItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
     {
         descriptionText.gameObject.SetActive(false);
         InitializeUI();
+
+        SetLocked(true);
     }
 
     public void BuyPlant()
@@ -58,6 +67,43 @@ public class PlantItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
         nameText.text = plant.name;
         priceText.text = "$" + plant.buyPrice;
         icon.sprite = plant.icon;
+
+        unlockCostText.text = "Unlock: $" + plant.unlockCost;
+    }
+    public void AttemptUnlock()
+    {
+        if (isUnlocked)
+        {
+            BuyPlant();
+        }
+        else
+        {
+            gardenManager.TryUnlockPlant(this);
+        }
+    }
+    public void SetUnlocked(bool unlocked)
+    {
+        isUnlocked1 = unlocked;
+
+        if (isUnlocked1)
+        {
+            unlockButton.gameObject.SetActive(false);
+
+            priceText.gameObject.SetActive(true);
+            buttonText.text = "Buy";
+        }
+    }
+
+    public void SetLocked(bool locked)
+    {
+        isUnlocked1 = !locked;
+
+        if (locked)
+        {
+            unlockButton.SetActive(true);
+            priceText.gameObject.SetActive(false);
+            buttonText.text = "Upgrade License";
+        }
     }
 
     public void OnPointerEnter(PointerEventData eventData)
