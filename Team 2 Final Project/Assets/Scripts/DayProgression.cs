@@ -24,12 +24,6 @@ public class DayProgression : MonoBehaviour
 
     public static int Day = 1;
     public static System.Action OnDayChanged;
-    public Light directionalLight;  
-    public float dimIntensity = 0.2f;
-    public float normalIntensity = 1f;
-    public float dimDuration = 1f;   
-    public float holdDimTime = 2f;   
-    public float brightenDuration = 1f;
 
     //set this this in the inspector
     public TMP_Text textbox;
@@ -77,10 +71,8 @@ public class DayProgression : MonoBehaviour
       */
         
             StartCoroutine(HideShowButton(delay));
-            StartCoroutine(DimLightRoutine());
-
-      //  spawnedSunAndMoon = Instantiate(SunAndMoo);
-        //    Destroy(spawnedSunAndMoon, delay);
+            spawnedSunAndMoon = Instantiate(SunAndMoo);
+            Destroy(spawnedSunAndMoon, delay);
 
         OnDayChanged?.Invoke();
 
@@ -134,32 +126,4 @@ public class DayProgression : MonoBehaviour
         button.gameObject.SetActive(true);
         PlayerInput.gameObject.SetActive(true);
     }
-    private IEnumerator DimLightRoutine()
-    {
-        if (directionalLight == null)
-            yield break;
-
-        float startIntensity = directionalLight.intensity;
-
-        float t = 0;
-        while (t < dimDuration)
-        {
-            t += Time.deltaTime;
-            directionalLight.intensity = Mathf.Lerp(startIntensity, dimIntensity, t / dimDuration);
-            yield return null;
-        }
-
-        yield return new WaitForSeconds(holdDimTime);
-
-        t = 0;
-        while (t < brightenDuration)
-        {
-            t += Time.deltaTime;
-            directionalLight.intensity = Mathf.Lerp(dimIntensity, normalIntensity, t / brightenDuration);
-            yield return null;
-        }
-
-        directionalLight.intensity = normalIntensity;
-    }
-
 }
