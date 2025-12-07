@@ -70,6 +70,8 @@ public class PlotManager : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        if (GameManager.gameOver)
+            return;
         if (isPlanted)
         {
             if (plantStage == selectedPlant.plantStages.Length - 1 && 

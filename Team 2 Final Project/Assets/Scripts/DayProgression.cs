@@ -54,6 +54,8 @@ public class DayProgression : MonoBehaviour
     }
     private void NextDay()
         {
+        if (GameManager.gameOver)
+            return;
         Day += 1;
         Debug.Log("Button was clicked!");
         if (textbox != null) textbox.text = "Day: " + Day;

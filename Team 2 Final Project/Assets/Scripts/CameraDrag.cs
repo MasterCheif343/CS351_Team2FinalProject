@@ -13,7 +13,7 @@ public class CameraDrag : MonoBehaviour
     private bool _isDragging;
     private float zoomSpeed = 10f;
     private float minZoom = 3f;
-    private float maxZoom = 10f;
+    private float maxZoom = 15f;
     private float targetZoom;
     public float zoomStep = 1f;
     public float zoomSmoothSpeed = 8f;

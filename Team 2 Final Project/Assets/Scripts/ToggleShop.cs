@@ -19,6 +19,7 @@ public class ToggleShop : MonoBehaviour
 
     private void Start()
     {
+
         gm = FindObjectOfType<GardenManager>();
 
         storeToggle.onValueChanged.AddListener(ToggleCanvas);
@@ -27,7 +28,9 @@ public class ToggleShop : MonoBehaviour
     }
     public void ToggleCanvas(bool isOn)
     {
-        if(togglePlantStore == null)
+        if (GameManager.gameOver)
+            return;
+        if (togglePlantStore == null)
         {
             Debug.LogError("CanvasGroup is not Assigned");
             return;
