@@ -40,6 +40,12 @@ public class GameManager : MonoBehaviour
             gameOver = true;
           
         }
+
+        if(DayProgression.Day == 20 && sliderController.CurrentCO2InAir >= 65)
+        {
+            won = false;
+            gameOver = true;
+        }
         if (gameOver)
         {
             if (won)

@@ -25,18 +25,20 @@ public class SliderController : MonoBehaviour
 
     public Slider slider;
 
-    private bool isChangingCO2 = false;
+   // private bool isChangingCO2 = false;
 
-    public float CO2ChangeRate = 5f;
+   // public float CO2ChangeRate = 2f;
 
-    private float targetCO2;
+    public float dailyCO2IncreaseRate = 0.5f;
+
+    //private float targetCO2;
 
     public void Start()
     {
         slider = GetComponent<Slider>();
        
         CurrentCO2InAir = CO2inAir;
-        targetCO2 = CurrentCO2InAir;
+        //targetCO2 = CurrentCO2InAir;
 
         slider.maxValue = CO2inAir;
         slider.value = CurrentCO2InAir;
@@ -44,7 +46,16 @@ public class SliderController : MonoBehaviour
         SetValue(CurrentCO2InAir);
     }
 
-    public void Update()
+    private void OnEnable()
+    {
+        DayProgression.OnDayChanged += AddDailyPollution;
+    }
+
+    private void OnDisable()
+    {
+        DayProgression.OnDayChanged -= AddDailyPollution;
+    }
+  /*  public void Update()
     {
         if (isChangingCO2)
         {
@@ -64,8 +75,12 @@ public class SliderController : MonoBehaviour
                 }
             }
         }
-    }
+    } */
 
+    private void AddDailyPollution()
+    {
+        AirPollution(dailyCO2IncreaseRate);
+    }
     public void SetValue(float value)
     {
         slider.value = value;
@@ -77,9 +92,16 @@ public class SliderController : MonoBehaviour
     {
 
         //StartCoroutine(RisingCO2(amount, duration, onComplete));
-        targetCO2 = Mathf.Clamp(CurrentCO2InAir + amount, 0, CO2inAir);
-        isChangingCO2 = true;
+        CurrentCO2InAir = Mathf.Clamp(CurrentCO2InAir + amount, 0, CO2inAir);
 
+       SetValue(CurrentCO2InAir);
+
+        Debug.Log("Current CO2 in air after AirPollution function is called: " + CurrentCO2InAir);
+
+        if(CurrentCO2InAir <= 0)
+        {
+            isAirPurified = true;
+        }
     }
 
    /* private IEnumerator RisingCO2( float amount , float duration, System.Action onComplete)
@@ -104,15 +126,14 @@ public class SliderController : MonoBehaviour
         onComplete?.Invoke();
     } */
     public void Photosynthesis(float amount)
-    {
-        isChangingCO2 = false;
-
-        CurrentCO2InAir -= amount;
-        CurrentCO2InAir = Mathf.Clamp(CurrentCO2InAir, 0, CO2inAir);
+    { 
+        CurrentCO2InAir = Mathf.Clamp(CurrentCO2InAir - amount, 0, CO2inAir);
 
         SetValue(CurrentCO2InAir);
+
         Debug.Log("CO2 removed: " + amount);
         Debug.Log("CO2 after photosynthesis: " + CurrentCO2InAir);
+
         if (CurrentCO2InAir < 0) {
             
             isAirPurified = true;
