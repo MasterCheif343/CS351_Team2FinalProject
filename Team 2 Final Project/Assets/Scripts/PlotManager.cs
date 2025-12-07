@@ -37,8 +37,14 @@ public class PlotManager : MonoBehaviour
     public float currentPlantHealth;
 
     public int currentPlantProgress;
-   
-  
+
+    private AudioSource plantAudio;
+
+    public AudioClip plantingSound;
+
+    public AudioClip harventSound;
+
+
     // Start is called before the first frame update
     void Start()
     {   if(plantSliderBars == null)
@@ -60,6 +66,7 @@ public class PlotManager : MonoBehaviour
 
         plant.gameObject.SetActive(false);
 
+        plantAudio = GetComponent<AudioSource>();
     }
     private void OnMouseDown()
     {
@@ -100,6 +107,9 @@ public class PlotManager : MonoBehaviour
 
         plant.gameObject.SetActive(true);
         UpdatePlant();
+
+        plantAudio.PlayOneShot(plantingSound);
+
     }
     void Harvest()
     {
@@ -107,6 +117,7 @@ public class PlotManager : MonoBehaviour
         plant.gameObject.SetActive(false);
         gm.Transaction(selectedPlant.sellPrice);
         Debug.Log("Harvested!");
+        plantAudio.PlayOneShot(harventSound);
         /*if (soldText != null)
         {
             soldText.text = "Sold: " + selectedPlant.name;

@@ -20,9 +20,14 @@ MonoBehaviour:
   - {fileID: 8337780805779089026, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 2125331982801898114, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   daysBetweenStages: 3
-  buyPrice: 8
-  sellPrice: 10
+  buyPrice: 5
+  sellPrice: 6
   icon: {fileID: 2125331982801898114, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
-  CO2RemovingFactor: 2
-  description: This plant takes 2% CO2 per day.
-  unlockCost: 15
+  CO2RemovingFactor: 0.3
+  description: 'C02 Absorbed per day: 0.3%
+
+    Sell price: $6
+
+    Havest Time:
+    9 days'
+  unlockCost: 10

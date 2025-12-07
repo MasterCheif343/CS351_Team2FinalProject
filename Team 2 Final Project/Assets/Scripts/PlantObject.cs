@@ -27,6 +27,7 @@ public class PlantObject : ScriptableObject
 
     public float CO2RemovingFactor = 1f;
 
+    [TextArea(3, 10)]
     public string description;
 
     public int unlockCost;

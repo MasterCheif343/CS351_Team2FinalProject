@@ -423,7 +423,7 @@ MonoBehaviour:
   health: 90
   clickDamage: 15
   damage: 6
-  bountyForKill: 6
+  bountyForKill: 3
 --- !u!50 &2597508834699227058
 Rigidbody2D:
   serializedVersion: 4

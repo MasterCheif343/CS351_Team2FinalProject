@@ -299,7 +299,7 @@ MonoBehaviour:
   health: 80
   clickDamage: 15
   damage: 8
-  bountyForKill: 6
+  bountyForKill: 1
 --- !u!1 &3323322965883948318
 GameObject:
   m_ObjectHideFlags: 0
