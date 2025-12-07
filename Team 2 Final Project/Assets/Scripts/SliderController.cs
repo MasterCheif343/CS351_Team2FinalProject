@@ -29,7 +29,7 @@ public class SliderController : MonoBehaviour
 
    // public float CO2ChangeRate = 2f;
 
-    public float dailyCO2IncreaseRate = 0.5f;
+    public float dailyCO2IncreaseRate = 5f;
 
     //private float targetCO2;
 

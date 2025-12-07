@@ -16,7 +16,7 @@ public class GardenManager : MonoBehaviour
     public bool isPlanting = false;
     public bool isSelecting = false;
 
-    public int money = 50;
+    public int money = 20;
 
     public TextMeshProUGUI moneyText;
 

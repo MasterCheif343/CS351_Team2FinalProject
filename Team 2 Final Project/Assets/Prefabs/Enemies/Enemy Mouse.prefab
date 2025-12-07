@@ -171,6 +171,7 @@ MonoBehaviour:
   chaseRange: 8
   target: {fileID: 0}
   speed: 6
+  stopDistance: 0.5
 --- !u!114 &4047428430172635980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +187,8 @@ MonoBehaviour:
   healthBar: {fileID: 4047428431758462434}
   health: 60
   clickDamage: 20
-  damage: 5
+  damage: 10
+  bountyForKill: 2
 --- !u!1 &4047428430810844045
 GameObject:
   m_ObjectHideFlags: 0

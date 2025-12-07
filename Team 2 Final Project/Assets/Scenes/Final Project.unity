@@ -5689,7 +5689,7 @@ MonoBehaviour:
   zoomStep: 1
   zoomSmoothSpeed: 8
   minX: -35
-  maxX: 26
+  maxX: 35
   minY: -4.8
   maxY: 41
 --- !u!20 &519420031
@@ -19735,7 +19735,7 @@ MonoBehaviour:
   selectPlant: {fileID: 0}
   isPlanting: 0
   isSelecting: 0
-  money: 50
+  money: 20
   moneyText: {fileID: 830949686}
   currentMoneyText: {fileID: 1334548652}
   toggleShop: {fileID: 1347944136}
@@ -25111,6 +25111,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.9528302
       objectReference: {fileID: 0}
+    - target: {fileID: 7469236415959202209, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
+      propertyPath: dailyCO2IncreaseRate
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7469236415959202210, guid: 802d1163a5c81f24e81745a1554b2eed, type: 3}
       propertyPath: m_Colors.m_NormalColor.b
       value: 0
@@ -25251,46 +25255,47 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[0]
-      value: Welcome to your Garden, since there's a lot air pollution, you'll have
-        to help fix it with your garden.
+      value: Welcome to your Garden, there's a lot of air polution and we need your
+        help to get rid of it.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[1]
-      value: 'The bar at the bottom of the screen shows you how bad the air quality
-        is. '
+      value: The bar at the bottom shows how much C02 is left decrease the amount
+        through your plants.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[2]
-      value: When the bar is red, it means that we are at the maximum in bad air
-        quality. The bar will turn different colors when there is CO2 is in the air.
+      value: You can find your shop in the bottom right corner just press the button
+        to access it.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[3]
-      value: To move the camera click and hold the right mouse button and move the
-        mouse.
+      value: When you have chosen which plant you want place it on the plot of land
+        to watch it grow.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[4]
-      value: To buy some plants, click on the toggle shop button on the bottom right
-        corner to buy some plants
+      value: 'Like any normal plants they take few days to grow, use the end day
+        button in the bottom left corner to let the plants grow. '
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[5]
-      value: Once you have selected the plant you want to plant, click on a plot
-        of land to plant your recently purchased plant.
+      value: When the progess bar is full just click on them with your mouse to harvest
+        them.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[6]
-      value: You'll have to wait a few days before you can harvest your plants; after
-        your plants are done, you can simply click on them to harvest.
+      value: But beware of animals coming to eat your plants, when they show up just
+        click them away with you mouse
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[7]
-      value: To win you'll have to make the bar go down to 0.
+      value: To move the camera right mouse click and move in the direction you want,
+        to zoom in and out you the scroll wheel or touchpad.
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[8]

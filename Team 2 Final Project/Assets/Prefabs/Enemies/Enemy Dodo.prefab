@@ -421,9 +421,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2597508833964166833}
   health: 90
-  clickDamage: 15
+  clickDamage: 20
   damage: 6
-  bountyForKill: 3
+  bountyForKill: 2
 --- !u!50 &2597508834699227058
 Rigidbody2D:
   serializedVersion: 4

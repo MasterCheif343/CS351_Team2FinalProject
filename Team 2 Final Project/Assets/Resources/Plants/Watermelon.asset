@@ -20,13 +20,13 @@ MonoBehaviour:
   - {fileID: 2241551580791386950, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: -50953498169549184, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   daysBetweenStages: 4
-  buyPrice: 20
-  sellPrice: 25
+  buyPrice: 30
+  sellPrice: 35
   icon: {fileID: -50953498169549184, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   CO2RemovingFactor: 3
   description: 'C02 Absorbed per day: 3%
 
-    Sell price: $18
+    Sell price: $35
 
     Havest Time: 12
     days'

@@ -346,8 +346,8 @@ MonoBehaviour:
   healthBar: {fileID: 8999694383249928376}
   health: 200
   clickDamage: 10
-  damage: 25
-  bountyForKill: 10
+  damage: 40
+  bountyForKill: 6
 --- !u!114 &8999694382736407837
 MonoBehaviour:
   m_ObjectHideFlags: 0
