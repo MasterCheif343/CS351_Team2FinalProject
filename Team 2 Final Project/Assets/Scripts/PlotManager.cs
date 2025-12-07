@@ -125,7 +125,7 @@ public class PlotManager : MonoBehaviour
         }    */
     }
 
-    public void PlantTakeDamage(float damage)
+    public void PlantTakeDamage(float damage, EnemyAnimalChase attackingAnimal)
     {
         currentPlantHealth -= damage;
 
@@ -133,14 +133,24 @@ public class PlotManager : MonoBehaviour
 
         if(currentPlantHealth <= 0)
         {
-            PlantDeath();
+            PlantDeath(attackingAnimal);
         }
     }
 
-    public void PlantDeath()
+    public void PlantDeath(EnemyAnimalChase attackingAnimal)
     {
+        if (attackingAnimal != null)
+        {
+            attackingAnimal.TargetDestroyed();
+        }
         isPlanted = false;
         plant.gameObject.SetActive(false);
+
+        if(plantSliderBars != null)
+        {
+            plantSliderBars.SetHealth(0);
+            plantSliderBars.gameObject.SetActive(false);
+        }
     }
 
    /* private IEnumerator FadeText()

@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
           
         }
 
-        if(DayProgression.Day == 20 && sliderController.CurrentCO2InAir >= 65)
+        if(DayProgression.Day == 20 && sliderController.CurrentCO2InAir >= 80)
         {
             won = false;
             gameOver = true;

@@ -71,6 +71,17 @@ public class EnemyAnimalChase : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
     }
+
+    public void TargetDestroyed()
+    {
+        plotTransform = null;
+
+        FindClosestPlot();
+
+        rb.velocity = Vector2.zero;
+
+        anim.SetBool("isMoving", false);
+    }
     void FindClosestPlot()
     {
         GameObject[] plots = GameObject.FindGameObjectsWithTag("Plant");

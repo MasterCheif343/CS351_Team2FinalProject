@@ -21,6 +21,8 @@ public class Enemy : MonoBehaviour
 
     public int bountyForKill = 2;
 
+    private EnemyAnimalChase chase;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,7 +67,7 @@ public class Enemy : MonoBehaviour
 
         if (plantHealth != null)
         {
-            plantHealth.PlantTakeDamage(damage);
+            plantHealth.PlantTakeDamage(damage, chase);
         }
        
     }
@@ -74,7 +76,7 @@ public class Enemy : MonoBehaviour
         PlotManager plantHealth = collision.gameObject.GetComponentInParent<PlotManager>();
         if (plantHealth != null)
         {
-            plantHealth.PlantTakeDamage(damage * Time.deltaTime);
+            plantHealth.PlantTakeDamage(damage * Time.deltaTime, chase);
         }
     }
     private void OnMouseDown()
