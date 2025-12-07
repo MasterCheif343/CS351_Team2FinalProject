@@ -24,6 +24,12 @@ public class DayProgression : MonoBehaviour
 
     public static int Day = 1;
     public static System.Action OnDayChanged;
+    public Light directionalLight;  
+    public float dimIntensity = 0.2f;
+    public float normalIntensity = 1f;
+    public float dimDuration = 1f;   
+    public float holdDimTime = 2f;   
+    public float brightenDuration = 1f;
 
     //set this this in the inspector
     public TMP_Text textbox;
@@ -31,13 +37,11 @@ public class DayProgression : MonoBehaviour
     public Button button;
     //public Button statusReport;
     public Animator dayAnimator;
-    public GameObject SunAndMoo;
    // public GameObject DayToNight;
    // public GameObject NightToDay;
     public GameObject PlayerInput;
     public float delay = 5f;
     public Camera mainCamera;
-    private GameObject spawnedSunAndMoon;
     private Vector3 cameraStartPos;
 
     // Start is called before the first frame update
@@ -71,8 +75,7 @@ public class DayProgression : MonoBehaviour
       */
         
             StartCoroutine(HideShowButton(delay));
-            spawnedSunAndMoon = Instantiate(SunAndMoo);
-            Destroy(spawnedSunAndMoon, delay);
+            StartCoroutine(DimLightRoutine());
 
         OnDayChanged?.Invoke();
 
@@ -125,5 +128,32 @@ public class DayProgression : MonoBehaviour
         // show the button again
         button.gameObject.SetActive(true);
         PlayerInput.gameObject.SetActive(true);
+    }
+    private IEnumerator DimLightRoutine()
+    {
+        if (directionalLight == null)
+            yield break;
+
+        float startIntensity = directionalLight.intensity;
+
+        float t = 0;
+        while (t < dimDuration)
+        {
+            t += Time.deltaTime;
+            directionalLight.intensity = Mathf.Lerp(startIntensity, dimIntensity, t / dimDuration);
+            yield return null;
+        }
+
+        yield return new WaitForSeconds(holdDimTime);
+
+        t = 0;
+        while (t < brightenDuration)
+        {
+            t += Time.deltaTime;
+            directionalLight.intensity = Mathf.Lerp(dimIntensity, normalIntensity, t / brightenDuration);
+            yield return null;
+        }
+
+        directionalLight.intensity = normalIntensity;
     }
 }
