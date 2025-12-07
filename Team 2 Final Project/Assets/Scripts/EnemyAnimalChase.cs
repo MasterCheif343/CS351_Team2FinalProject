@@ -1,3 +1,8 @@
+/* Adam Krenek
+ * Final Game Project
+ * This script manages the animal's hunger for plants
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

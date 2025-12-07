@@ -1,3 +1,8 @@
+/* Adam Krenek
+ * Final Game Object
+ * This script manages the health bars for the enemies
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,3 +1,8 @@
+/* Adam Krenek
+ * Final Game Project
+ * This script manages the enemy's stats
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

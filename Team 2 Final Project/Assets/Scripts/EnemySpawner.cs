@@ -1,3 +1,8 @@
+/* Adam Krenek
+ * Final Game Project
+ * This script manages how the enemies will spawn
+ */
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private GameObject[] EnemyAnimalPrefab;
 
     [SerializeField] public int spawnEveryNumberOfDays = 1;
+
+    [SerializeField] private float delaySpawnBySeconds = 10f; 
 
     private int lastSpawnedDay = 0;
     // Start is called before the first frame update
@@ -25,22 +32,24 @@ public class EnemySpawner : MonoBehaviour
     {
         if(DayProgression.Day >= lastSpawnedDay + spawnEveryNumberOfDays)
         {
-            SpawnEnemy();
+            StartCoroutine(SpawnEnemyDelayed(delaySpawnBySeconds));
             lastSpawnedDay = DayProgression.Day;
         }
     }
-    private void SpawnEnemy()
+    private IEnumerator SpawnEnemyDelayed(float delay)
     {
-        if (EnemyAnimalPrefab.Length == 0)
+        yield return new WaitForSeconds(delay);
+
+        if(EnemyAnimalPrefab.Length == 0)
         {
-            Debug.LogError("No enemy animals set for spawning!");
-            return;
+            Debug.LogError("No enemy set for spawning, blin!");
+            yield break;
         }
 
-        GameObject chosenEnemy = EnemyAnimalPrefab[Random.Range(0, EnemyAnimalPrefab.Length)];
+        GameObject choseEnemy = EnemyAnimalPrefab[Random.Range(0, EnemyAnimalPrefab.Length)];
 
-        Vector3 spawnPos = GetSafeSpawnPosition();
-        Instantiate(chosenEnemy, spawnPos, Quaternion.identity);
+        Vector3 spawnPosition = GetSafeSpawnPosition();
+        Instantiate(choseEnemy, spawnPosition, Quaternion.identity);    
     }
 
     private Vector3 GetSafeSpawnPosition()
