@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 2131463372336414521}
   m_Layer: 0
   m_Name: Plot of Land
-  m_TagString: Plant
+  m_TagString: Plot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -699,11 +699,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sliderController: {fileID: 0}
   plantSliderBars: {fileID: 2131463372336414521}
+  isPlanted: 0
   currentStageProgress: 0
   totalStages: 0
   selectedPlant: {fileID: 11400000, guid: 4ef71e36537b3d047a67d8c77533cf97, type: 2}
   currentPlantHealth: 0
   currentPlantProgress: 0
+  plantingSound: {fileID: 0}
+  harventSound: {fileID: 0}
 --- !u!114 &3634114703638234059
 MonoBehaviour:
   m_ObjectHideFlags: 0

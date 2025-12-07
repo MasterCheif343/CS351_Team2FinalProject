@@ -16,7 +16,7 @@ public class PlotManager : MonoBehaviour
 
     public PlantSliderBars plantSliderBars;
    
-    bool isPlanted = false;
+    public bool isPlanted = false;
     
     SpriteRenderer plant;
 
@@ -49,7 +49,7 @@ public class PlotManager : MonoBehaviour
     void Start()
     {   if(plantSliderBars == null)
         {
-            plantSliderBars = FindObjectOfType<PlantSliderBars>();
+            plantSliderBars = GetComponentInChildren<PlantSliderBars>(true);
         }
 
         if (sliderController == null)
@@ -92,6 +92,10 @@ public class PlotManager : MonoBehaviour
         selectedPlant = newPlant;
         isPlanted = true;
 
+        gameObject.tag = "Plant";
+
+        plantCollider.enabled = true;
+
         gm.Transaction(-selectedPlant.buyPrice);
 
         plantStage = 0;
@@ -102,6 +106,13 @@ public class PlotManager : MonoBehaviour
 
         if(plantSliderBars != null)
         {
+            if(plantSliderBars.gameObject == null)
+            {
+                plantSliderBars = GetComponentInChildren<PlantSliderBars>(true);
+            }
+
+            plantSliderBars.gameObject.SetActive(true);
+
             plantSliderBars.Initialize(selectedPlant.maxPlantHealth);
             plantSliderBars.SetMaxProgress(selectedPlant.plantStages.Length);
             plantSliderBars.SetCurrentProgress(0);
@@ -115,10 +126,18 @@ public class PlotManager : MonoBehaviour
     }
     void Harvest()
     {
+        gameObject.tag = "Plot";
+
+        plantCollider.enabled = false;
+
         isPlanted = false;
+
         plant.gameObject.SetActive(false);
+
         gm.Transaction(selectedPlant.sellPrice);
+
         Debug.Log("Harvested!");
+
         plantAudio.PlayOneShot(harventSound);
         /*if (soldText != null)
         {
@@ -141,17 +160,29 @@ public class PlotManager : MonoBehaviour
 
     public void PlantDeath(EnemyAnimalChase attackingAnimal)
     {
-        if (attackingAnimal != null)
+        if (attackingAnimal != null && attackingAnimal.gameObject.activeInHierarchy)
         {
             attackingAnimal.TargetDestroyed();
         }
+
+        gameObject.tag = "Plot";
+
+        plantCollider.enabled = false;
+
         isPlanted = false;
         plant.gameObject.SetActive(false);
+
+        selectedPlant = null;
+
+        plantStage = 0;
+        daysRemaining = 0;
+        currentPlantHealth = 0;
+        currentPlantProgress = 0;
 
         if(plantSliderBars != null)
         {
             plantSliderBars.SetHealth(0);
-            plantSliderBars.gameObject.SetActive(false);
+            plantSliderBars.SetCurrentProgress(0);
         }
     }
 

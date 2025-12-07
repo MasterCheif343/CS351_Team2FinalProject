@@ -63,20 +63,20 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        PlotManager plantHealth = collision.gameObject.GetComponentInParent<PlotManager>();
+        PlotManager plotManager = collision.gameObject.GetComponentInParent<PlotManager>();
 
-        if (plantHealth != null)
+        if (plotManager != null && plotManager.isPlanted)
         {
-            plantHealth.PlantTakeDamage(damage, chase);
+            plotManager.PlantTakeDamage(damage, chase);
         }
        
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        PlotManager plantHealth = collision.gameObject.GetComponentInParent<PlotManager>();
-        if (plantHealth != null)
+        PlotManager plotManager = collision.gameObject.GetComponentInParent<PlotManager>();
+        if (plotManager != null && plotManager.isPlanted)
         {
-            plantHealth.PlantTakeDamage(damage * Time.deltaTime, chase);
+            plotManager.PlantTakeDamage(damage * Time.deltaTime, chase);
         }
     }
     private void OnMouseDown()
