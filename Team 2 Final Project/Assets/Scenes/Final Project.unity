@@ -860,6 +860,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8394113305788072496, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394113305788072496, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394113305788072496, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8394113305788072496, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8394113304566982652, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d9c46dedb63d39d4092cbf872ba87bc7, type: 3}
@@ -1819,7 +1835,6 @@ MonoBehaviour:
   dayAnimator: {fileID: 0}
   PlayerInput: {fileID: 1936532090}
   delay: 4
-  mainCamera: {fileID: 519420031}
 --- !u!1001 &202938062
 PrefabInstance:
   m_ObjectHideFlags: 0
