@@ -13,7 +13,7 @@ public class CameraDrag : MonoBehaviour
     private bool _isDragging;
     private float zoomSpeed = 10f;
     private float minZoom = 3f;
-    private float maxZoom = 20f;
+    private float maxZoom = 10f;
     private float targetZoom;
     public float zoomStep = 1f;
     public float zoomSmoothSpeed = 8f;
@@ -71,9 +71,12 @@ public class CameraDrag : MonoBehaviour
         _mainCamera.orthographicSize =
     Mathf.Lerp(_mainCamera.orthographicSize, targetZoom, zoomSmoothSpeed * Time.deltaTime);
 
-        // stops camera movement past a certain point
-        float clampedX = Mathf.Clamp(transform.position.x, minX, maxX);
-        float clampedY = Mathf.Clamp(transform.position.y, minY, maxY);
+        float camHalfHeight = _mainCamera.orthographicSize;
+        float camHalfWidth = camHalfHeight * _mainCamera.aspect;
+
+        
+        float clampedX = Mathf.Clamp(transform.position.x, minX + camHalfWidth, maxX - camHalfWidth);
+        float clampedY = Mathf.Clamp(transform.position.y, minY + camHalfHeight, maxY - camHalfHeight);
 
         transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }

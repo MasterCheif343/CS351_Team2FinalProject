@@ -41,17 +41,13 @@ public class DayProgression : MonoBehaviour
    // public GameObject NightToDay;
     public GameObject PlayerInput;
     public float delay = 5f;
-    public Camera mainCamera;
-    private Vector3 cameraStartPos;
+   
+   
 
     // Start is called before the first frame update
     void Start()
     { 
         textbox.text = "Day: " + Day;
-        if (mainCamera != null)
-        {
-            cameraStartPos = mainCamera.transform.position;
-        }
         button.onClick.AddListener(NextDay);
       //  statusReport.onClick.AddListener(OnDestroy);
       //  statusText.text = "Day's passed:" + Day;
@@ -60,11 +56,6 @@ public class DayProgression : MonoBehaviour
         {
         Day += 1;
         Debug.Log("Button was clicked!");
-        if (mainCamera != null)
-        {
-            // Stop any movement by resetting position
-            mainCamera.transform.position = cameraStartPos;
-        }
         if (textbox != null) textbox.text = "Day: " + Day;
       /*  if (textbox != null) statusText.text = "Day's passed: " + Day;
         if (Day % 7 == 0)
