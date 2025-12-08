@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a0bf8a49bd8f44a91e8dde666bd31, type: 3}
   m_Name: Radish
   m_EditorClassIdentifier: 
-  maxPlantHealth: 100
+  maxPlantHealth: 75
   plantName: Radish
   plantStages:
   - {fileID: -8520553723163835839, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
@@ -23,8 +23,8 @@ MonoBehaviour:
   buyPrice: 2
   sellPrice: 3
   icon: {fileID: -1325689043919491311, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
-  CO2RemovingFactor: 0.1
-  description: 'C02 Absorbed per day: 0.1%
+  CO2RemovingFactor: 0.5
+  description: 'C02 Absorbed per day: 0.5%
 
     Sell price: $3
 

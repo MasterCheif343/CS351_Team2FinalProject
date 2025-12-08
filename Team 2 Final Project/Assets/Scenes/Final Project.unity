@@ -24286,6 +24286,10 @@ PrefabInstance:
       propertyPath: m_MovementType
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4199247940894655596, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
+      propertyPath: m_ScrollSensitivity
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4199247940894655597, guid: 4c6a26df7b9495a4cbe1bdd0c941819c, type: 3}
       propertyPath: m_SizeDelta.x
       value: 243.5898
@@ -25291,7 +25295,7 @@ PrefabInstance:
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[6]
       value: But beware of animals coming to eat your plants, when they show up just
-        click them away with you mouse
+        click them away with your mouse
       objectReference: {fileID: 0}
     - target: {fileID: 8915289272197513268, guid: 8e10c2e0dd19a23449680cdcd9fda1b4, type: 3}
       propertyPath: sentences.Array.data[7]

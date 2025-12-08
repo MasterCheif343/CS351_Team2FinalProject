@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93a0bf8a49bd8f44a91e8dde666bd31, type: 3}
   m_Name: Chili Peppers
   m_EditorClassIdentifier: 
-  maxPlantHealth: 100
+  maxPlantHealth: 150
   plantName: Chili Peppers
   plantStages:
   - {fileID: 4140736417263544742, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 8775521630038242473, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 8337780805779089026, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
   - {fileID: 2125331982801898114, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
-  daysBetweenStages: 3
+  daysBetweenStages: 1
   buyPrice: 5
   sellPrice: 6
   icon: {fileID: 2125331982801898114, guid: 9794f15d65a62e34c9ee32c38af1fc72, type: 3}
@@ -29,5 +29,5 @@ MonoBehaviour:
     Sell price: $6
 
     Havest Time:
-    9 days'
+    4 days'
   unlockCost: 10
